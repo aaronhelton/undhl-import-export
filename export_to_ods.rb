@@ -36,6 +36,7 @@ def export_metadata_to_csv(env)
 end
 
 def parse_metadata(csv)
+	log("Parsing metadata located in #{csv}.")
 	metadata = Hash.new
 	CSV.foreach(csv, { col_sep: ",", encoding: "ISO8859-1", headers: true}) do |row|
 	  metadata[row[0]] = row.to_hash
@@ -46,8 +47,9 @@ end
 def make_ods_file(metadata,map)
 	# Do we need the exact time this was generated??  I guess only if we make more than one in a 24 hour period...
 	out_file = "ubis-#{Date.today}.csv"
+	log("Writing output file #{out_file} with metadata: #{metadata}.")
 	File.open(out_file, "a+") do |csv|
-	  csv.puts "id,issued_date,docsymbol,title,session,agenda,subjects"
+	  csv.puts "id,issued_date,docsymbol,title,subjects,session,agenda"
 	  metadata.each do |m|
 	    r = m[1]
 	    if r["dc.date.issued"]
@@ -79,33 +81,57 @@ def make_ods_file(metadata,map)
 		session = ""
 	    end
 	    if r["undr.agenda[en]"]
-		agenda = r["undr.agenda[en]"]
+		if r["undr.agenda[en]"] =~ /\-/
+		  if r["undr.agenda[en]"] =~ /\:/
+		    agenda = r["undr.agenda[en]"].split('-')[0].split(':')[1].gsub(/\s+/,'')
+		  else
+		    agenda = ''
+		  end
+		  session = r["undr.agenda[en]"].split('-')[0].split(/\//)[1]
+		else
+		  agenda = ''
+		  session = ''
+		end
 	    elsif r["undr.agenda"]
 		agenda =  r["undr.agenda"]
 	    else
 		agenda = ""
 	    end
+	    tcodes = Array.new
+	    log("Looking up subject codes.")
 	    if r["dc.subject[en]"]
-		if map[r["dc.subject[en]"]]
-			subject = map[r["dc.subject[en]"]]["id"]
+		subjects = r["dc.subject[en]"].split('||')
+		subjects.each do |s|
+		  if map[s]
+			tcodes << map[s]["id"]
+		  end
 		end
 	    elsif r["dc.subject"]
-		if map[r["dc.subject"]]
-			subject = map[r["dc.subject"]]["id"]
+		subjects = r["dc.subject"].split('||')
+                subjects.each do |s|
+                  if map[s]
+                        tcodes << map[s]["id"]
+                  end
 		end
 	    else
-		subject = ""
+		tcodes = ""
 	    end
-	    csv.puts "\"#{r["id"]}\",\"#{date_issued}\",\"#{docsymbol}\",\"#{title}\",\"#{session}\",\"#{agenda}\",\"#{subject}\""
+	    if tcodes.kind_of?(Array)
+ 	      subject = tcodes.join("||")
+	    else
+	      subject = tcodes
+	    end
+	    csv.puts "\"#{r["id"]}\",\"#{date_issued}\",\"#{docsymbol}\",\"#{title}\",\"#{subject}\",\"#{session}\",\"#{agenda}\""
 	  end
 	end
+	log("ODS Export complete.")
 end
 
 # Variables we'll need.  These get moved into the functions that make use of them, but it's useful to outline them
 # here first.
 
 # Procedural logic
-csv = export_metadata_to_csv('dev')
+csv = export_metadata_to_csv('qa')
 metadata = parse_metadata(csv)
 #puts metadata["1866"].inspect
 #retarget_items(metadata)
