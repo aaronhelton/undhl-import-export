@@ -136,6 +136,6 @@ metadata = parse_metadata(csv)
 #puts metadata["1866"].inspect
 #retarget_items(metadata)
 
-subject_mapfile = "thesaurus-map.json"
+subject_mapfile = "lib/thesaurus-map.json"
 map = JSON.parse(File.read("#{subject_mapfile}"))
 make_ods_file(metadata,map)

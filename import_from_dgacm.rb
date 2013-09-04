@@ -12,9 +12,8 @@ require 'pdf-reader'	#External ruby gem.  gem install pdf-reader to install it
 require 'mimemagic'	#External ruby gem.  gem install mimemagic to install it.
 require 'trollop'	#External ruby gem.  gem install trollop to install it
 
-
 def log(message)
-	logfile = "import_from_dgacm.log"
+	logfile = "logs/import.log"
 	File.open(logfile, 'a+') do |f|
 		f.puts "#{Time.now} -- #{message}"
 	end
@@ -22,7 +21,7 @@ end
 
 def err(message)
 	# Need a separate error log to catch things like incomplete packages so we don't import with missing or corrupt files
-	logfile = "import_errors.log"
+	logfile = "logs/import_errors.log"
 	File.open(logfile, 'a+') do |f|
 		f.puts "#{Time.now} -- #{message}"
 	end
@@ -71,7 +70,7 @@ def getext(mimetype)
 end
 
 #Function definitions.  Names should be self-explanatory
-def get_latest_csv(access_key_id, secret_access_key, csv_type).
+def get_latest_csv(access_key_id, secret_access_key, csv_type)
 	AWS::S3::Base.establish_connection!(
 		:access_key_id => access_key_id,
 		:secret_access_key => secret_access_key
@@ -100,7 +99,7 @@ def get_latest_csv(access_key_id, secret_access_key, csv_type).
 	return latest_file.gsub(/Drop\//,'')
 end
 
-def get_specific_csv(access_key_id, secret_access_key, filename)
+def get_specific_csv(access_key_id, secret_access_key, bucket, filename)
 	AWS::S3::Base.establish_connection!(
 		:access_key_id => access_key_id,
 		:secret_access_key => secret_access_key
@@ -200,11 +199,8 @@ def parse_csv(csv_file)
 	return metadata
 end		
 
-def package(metadata)
-	package_dir = 'package-' + Date.today.to_s
-	if !File.exists?(package_dir)
-		Dir.mkdir(package_dir) or abort "Unable to create #{package_dir}.  Make sure you have permission to write to it and try again."
-	end
+def package(metadata,package_dir)
+	# To Do: REALLY need to figure out a way to keep from importing items with no bitstreams.  The following will happily make empty packages.
 	docsymbols = metadata.keys
 	log("Processing #{docsymbols.length} document symbols.")
 	docsymbols.each do |ds|
@@ -370,28 +366,21 @@ def package(metadata)
 	end
 end
 
-# Steps
-# Read ARGV command line options and set variables accordingly
-# 1: Get the latest slotted csv from AWS (TODO: determine best format, such as yyymmdd for designating latest csv)
-# 2: Parse slotted csv to extract symbol, job number for each language, title, agenda item number, and agenda sub-item number
-# 3: Use job numbers to generate ODS URL for retrieval.
-# 4: Build package XMLs: dublin_core.xml and metadata_undr.xml
-# 5: Build contents and download files
-# 6: Repeat for non-slotted
-steps = Array.new
-
+##### Begin Argument Parsing and Procedural Logic #####
 opts = Trollop::options do
 	banner <<-EOS
 import_from_dgacm.rb processes DGCAM-originated metadata files (CSV format) and creates DSpace Simple Archive Packages from them.
 
+Note: The credentials file should be in the format bucket::access_key_id::secret_access_key.  Note the separator '::'
+
 Usage: 
-	import_from_dgacm.rb [options] <filename>
+	import_from_dgacm.rb [options]
 
 where options are: 
 EOS
 
 	opt :remote, "Get the file from the remote S3 bucket.  Requires a credentials file"
-	opt :get_latest, "Instead of specifying a filename, tell the script to get the latest available file.", :default => true
+	opt :get_latest, "Instead of specifying a filename, tell the script to get the latest available file."
 	opt :type, "The type of file being processed, slotted or non-slotted.", :type => String
 	opt :local, "Get the file from a local file system."
 	opt :credentials, "Path to a credentials file for S3.", :type => String
@@ -399,40 +388,71 @@ EOS
 end
 Trollop::die :credentials, "<file> must be supplied" unless opts[:credentials] if opts[:remote]
 Trollop::die :credentials, "<file> must exist" unless File.exist?(opts[:credentials]) if opts[:remote] && opts[:credentials]
-Trollop::die :type, "is required unless specifying a filename.  Can be 'slotted' or 'non-slotted'." unless opts[:type] if opts[:get_latest]
-Trollop::die :filename, "is required" if opts[:local]
+if opts[:get_latest]
+	Trollop::die :type, "is required unless specifying a filename.  Can be 'slotted' or 'non-slotted'." unless opts[:type]
+end
+Trollop::die :filename, "is required" if opts[:local] && !opts[:filename]
 Trollop::die :filename, "must exist" unless File.exist?(opts[:filename]) if opts[:local] && opts[:filename]
 
+if !File.exists?('logs')
+	Dir.mkdir('logs') or abort "Unable to create logs directory.  Make sure you have permission to write to it and try again."
+end
+
+if !File.exists?('packages')
+	Dir.mkdir('packages') or abort "Unable to create packages directory.  Make sure you have permission to write to it and try again."
+end
+
+package_dir = 'packages/package-' + Date.today.to_s
+if !File.exists?(package_dir)
+	Dir.mkdir(package_dir) or abort "Unable to create #{package_dir}.  Make sure you have permission to write to it and try again."
+end
+
+log("Beginning DGACM packaging")
 #Standard option 1a: remote with credentials, get latest slotted file
 if opts[:remote] && opts[:credentials] && opts[:get_latest] && opts[:type] == 'slotted'
+	creds = File.read(opts[:credentials]) .split('::')
+	bucket = creds[0]
+	access_key_id = creds[1]
+	secret_access_key = creds[2]
+	type = opts[:type]
 	
+	file = get_latest_csv(access_key_id,secret_access_key,type)
 end
 
 #Standard option 1b: remote with credentials, get latest non-slotted file
 if opts[:remote] && opts[:credentials] && opts[:get_latest] && opts[:type] == 'non-slotted'
+	creds = File.read(opts[:credentials]) .split('::')
+	bucket = creds[0]
+	access_key_id = creds[1]
+	secret_access_key = creds[2]
+	type = opts[:type]
 	
+	file = get_latest_csv(access_key_id, secret_access_key, 'non-slotted') 
 end
 
 #Standard option 2: remote with credentials, get specific file (doesn't matter slotted vs non-slotted)
 if opts[:remote] && opts[:credentials] && opts[:filename]
+	creds = File.read(opts[:credentials]) .split('::')
+	bucket = creds[0]
+	access_key_id = creds[1]
+	secret_access_key = creds[2]
+	
+	file = get_specific_csv(access_key_id, secret_access_key, bucket, opts[:filename])
 end
 
 #Standard option3: local specific file (best for processing errors)
-if opts[:remote] && opts[:credentials] && opts[:filename] && opts[:type] == 'non-slotted'
+if opts[:local] && opts[:filename]
+	file = opts[:filename]
 end
 
-# Procedural logic
-#log("Beginning DGACM packaging")
-#slotted = get_latest_csv(access_key_id, secret_access_key, 'slotted')
-#log("Processing entries from #{slotted}")
-#metadata = parse_csv(slotted) or abort "Unable to read #{slotted} for some reason.  Check that the file exists and you have permission to read it."
-#log("Found #{metadata.length} entries.")
-#package(metadata) or abort "Something went wrong with packaging..."
-#non_slotted = get_latest_csv(access_key_id, secret_access_key, 'non-slotted')
-#log("Processing entries from #{non_slotted}")
-#metadata = parse_csv(non_slotted) or abort "Unable to read #{non_slotted} for some reason.  Check that the file exists and you have permission to read it."
-#log("Found #{metadata.length} entries.")
-#package(metadata) or abort "Something went wrong with packaging..."
-
-#Time to deal with errors with the 
-#log("DGACM Packaging complete")
+#Process it
+log("Processing entries from #{file}.")
+if File.size?(file) > 117
+	metadata = parse_csv(opts[:filename]) or abort "Unable to read #{opts[:filename]} for some reason.  Check that the file exists and you have permission to read it."
+	log("File #{file} contains #{metadata.length} entries.")
+	package(metadata,package_dir) or abort "Something went wrong with packaging..."
+else
+	log("File #{file} contained no entries.")
+end
+log("DGACM Packaging Complete.")
+log("++++++++++++++++++++++")
