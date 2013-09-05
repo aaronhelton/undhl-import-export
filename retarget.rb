@@ -86,9 +86,9 @@ metadata_import = ''
 if !File.exists?(outfile)
 	# We assume that if the export to ODS was already run, we use that.  Otherwise we get another one.  This assumption may not be valid.
 	`#{metadata_export}` or abort "The program encountered an issue executing the following command: #{metadata_export}.  Please check your permissions and try again."
-else
-	metadata = parse_csv(outfile)
 end
+metadata = parse_csv(outfile)
+
 
 if metadata
 	remap(metadata, opts[:pattern_file]) or abort "Remapping could not be completed..."
