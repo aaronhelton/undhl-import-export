@@ -57,11 +57,11 @@ Usage:
 where options are:
 EOS
 
-	:pattern_file, "File containing Document Symbol patterns and target collection handles.", :type => String, :default => 'lib/dspatterns.txt'
-	:eperson, "DSpace eperson email address used to perform the item moves.", :type => String
-	:undo_file, "File containing reversal data to undo a previous move.", :type => String
-	:verbose, "In case you want to review and confirm changes."
-	:dev, "Flag to set the dev system.  Normally this is run on the QA system, so you don't need to specify it."
+	opt :pattern_file, "File containing Document Symbol patterns and target collection handles.", :type => String, :default => 'lib/dspatterns.txt'
+	opt :eperson, "DSpace eperson email address used to perform the item moves.", :type => String
+	opt :undo_file, "File containing reversal data to undo a previous move.", :type => String
+	opt :verbose, "In case you want to review and confirm changes."
+	opt :dev, "Flag to set the dev system.  Normally this is run on the QA system, so you don't need to specify it."
 end
 Trollop::die :eperson, "is required." unless opts[:eperson]
 Trollop::die :pattern_file, "is not readable or does not exist." unless File.exists?(opts[:pattern_file]) if opts[:pattern_file]
