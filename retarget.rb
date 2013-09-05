@@ -56,6 +56,7 @@ Usage:
 
 where options are:
 EOS
+
 	:pattern_file, "File containing Document Symbol patterns and target collection handles.", :type => String, :default => 'lib/dspatterns.txt'
 	:eperson, "DSpace eperson email address used to perform the item moves.", :type => String
 	:undo_file, "File containing reversal data to undo a previous move.", :type => String
