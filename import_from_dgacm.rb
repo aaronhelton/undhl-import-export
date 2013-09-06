@@ -4,7 +4,7 @@
 # This script should be run with ruby version > 1.9.3 and the following libraries and gems
 
 require 'rubygems'
-require 'csv'	#External ruby gem.  gem install csv to install it
+require 'smarter_csv'	#External ruby gem.  gem install smarter_csv to install it
 require 'net/http'
 require 'aws/s3'	#External ruby gem.  gem install aws-s3 to install it
 require 'date'
@@ -96,6 +96,7 @@ def get_latest_csv(access_key_id, secret_access_key, csv_type)
 			f.write chunk
 		end
 	end
+	AWS::S3::S3Object.rename(latest_file, latest_file.gsub(/Drop\//, 'Drop/processed/'), 'undhl-dgacm')
 	return latest_file.gsub(/Drop\//,'')
 end
 
@@ -119,29 +120,23 @@ def get_specific_csv(access_key_id, secret_access_key, bucket, filename)
 end
 
 def parse_csv(csv_file)
-	# These CSVs have multiple rows per document symbol.  We need to combine them or otherwise figure out a way to deal with them.
-	# Some of the documents have multiple entries per job number, even.  I think we should just take the final entry for each job number...
-	# Also, some of the document symbol fields contain multiple document symbols.  This isn't a big issue, but we have to account for it.
-	
 	ods_daccess = '157.150.172.70'			
 	# may need to set this in c:\windows\system32\drivers\etc\hosts:
 	# 157.150.172.70  daccess-ods.un.org
 	# If so, then uncommend the following line and comment out the previous definition.
 	#ods_daccess = 'daccess-ods.un.org'
 	
-	debug = 0		#Set this to 0 unless you *really* need it.
-	
 	transitional = Hash.new{ |h,k| h[k] = Hash.new(&h.default_proc) }
-	CSV.foreach(csv_file, { col_sep: ",", encoding: "ISO8859-1", headers: true}) do |row|
-		if debug == 1 then log("Got row #{row}") end
-		#Key off of docsymbol; only the first if there are multiples.
-		if row[4].strip =~ /\s\s/  
-			docsymbol = row[4].strip.split(/\s+/)[0]
+	metadata = Hash.new
+	p csv_file
+	csv_data = SmarterCSV.process(csv_file, { :col_sep => "\t", :file_encoding => 'utf-8', :verbose => true })
+	csv_data.each do |row|
+		if row[:symbols] =~ /\s\s/
+			docsymbol = row[:symbols].split(/\s+/)[0]
 		else
-			docsymbol = row[4].strip
+			docsymbol = row[:symbols]
 		end
-		l = row[3].strip
-		case l
+		case row[:lang]
 			when "A"
 				language = "Arabic"
 			when "C"
@@ -154,41 +149,42 @@ def parse_csv(csv_file)
 				language = "Russian"
 			when "S"
 				language = "Spanish"
+			else
+				language = "Other"
 		end
-		transitional[docsymbol][language] = row.to_hash
+		transitional[docsymbol][language] = row
 	end
 	metadata = Hash.new{ |h,k| h[k] = Hash.new(&h.default_proc) }
 	docsymbols = transitional.keys
 	docsymbols.each do |ds|
 		languages = transitional[ds].keys
-		# Get the non-unique stuff first
 		if transitional[ds].key?("English") 
-			if transitional[ds]["English"]["DISTRIBUTION"].strip == "GENERAL"
-				if 	transitional[ds]["English"]["AGEN_ITEM"]
-					metadata[ds]["agen_item"] = transitional[ds]["English"]["AGEN_ITEM"].strip
+			if transitional[ds]["English"][:distribution].to_s.strip == "GENERAL"
+				if 	transitional[ds]["English"][:agen_item]
+					metadata[ds]["agen_item"] = transitional[ds]["English"][:agen_item].to_s.strip
 				end
-				if 	transitional[ds]["English"]["AGEN_SUB_ITEM"]
-					metadata[ds]["agen_sub_item"] = transitional[ds]["English"]["AGEN_SUB_ITEM"].strip
+				if 	transitional[ds]["English"][:agen_sub_item]
+					metadata[ds]["agen_sub_item"] = transitional[ds]["English"][:agen_sub_item].to_s.strip
 				end
 				metadata[ds] = {
-				"doc_num" => transitional[ds]["English"]["DOC_NUM"].strip,
-				"title" => transitional[ds]["English"]["TITLE"].strip,
-				"symbols" => transitional[ds]["English"]["SYMBOLS"].strip.split(/\s+/),
-				"distribution" => transitional[ds]["English"]["DISTRIBUTION"].strip,
-				"isbn" => transitional[ds]["English"]["ISBN"].to_s.strip,
-				"issn" => transitional[ds]["English"]["ISSN"].to_s.strip,
-				"cr_sales_num" => transitional[ds]["English"]["CR_SALES_NUM"].to_s.strip,
-				"issued_date" => Date.strptime(transitional[ds]["English"]["ISSUED_DATE"].strip.split(/\s/)[0], '%m/%d/%y').to_s,
-				"slot_num" => transitional[ds]["English"]["SLOT_NUM"].strip,
+				"doc_num" => transitional[ds]["English"][:doc_num].to_s.strip,
+				"title" => transitional[ds]["English"][:title].to_s.strip,
+				"symbols" => transitional[ds]["English"][:symbols].to_s.strip.split(/\s+/),
+				"distribution" => transitional[ds]["English"][:distribution].to_s.strip,
+				"isbn" => transitional[ds]["English"][:isbn].to_s.strip,
+				"issn" => transitional[ds]["English"][:issn].to_s.strip,
+				"cr_sales_num" => transitional[ds]["English"][:cr_sales_num].to_s.strip,
+				"issued_date" => transitional[ds]["English"][:issued_date].to_s,
+				"slot_num" => transitional[ds]["English"][:slot_num].to_s.strip,
 				"languages" =>  languages }
 			
 				#Get the non-unique stuff next
 				languages.each do |language|
-					jn = transitional[ds][language]["JOB_NUM"].strip.gsub(/NY-J-/,'N').gsub(/-/,'').gsub(/LP/,'').gsub(/\*/,'').gsub(/\/1/,'').gsub(/X/,'')
+					jn = transitional[ds][language][:job_num].strip.gsub(/NY-J-/,'N').gsub(/-/,'').gsub(/LP/,'').gsub(/\*/,'').gsub(/\/1/,'').gsub(/X/,'')
 					jp = jn[0..2] + "/" + jn[3..5] + "/" + jn[6..7]
 					url = ods_daccess + "/doc/UNDOC/GEN/" + jp + "/PDF/" + jn + ".pdf"
 					metadata[ds][language] = { 
-						"job_num" => transitional[ds][language]["JOB_NUM"].strip,
+						"job_num" => transitional[ds][language][:job_num].to_s.strip,
 						"language" => language,
 						"url" => url
 					}
@@ -197,11 +193,12 @@ def parse_csv(csv_file)
 		end
 	end
 	return metadata
-end		
+end
 
 def package(metadata,package_dir)
 	# To Do: REALLY need to figure out a way to keep from importing items with no bitstreams.  The following will happily make empty packages.
 	docsymbols = metadata.keys
+	out_dir = ''
 	log("Processing #{docsymbols.length} document symbols.")
 	docsymbols.each do |ds|
 		contents = Array.new
@@ -360,9 +357,22 @@ def package(metadata,package_dir)
 		#Write contents file
 		File.open("#{out_dir}/contents", "w+") do |file|
 			contents.each do |c|
-				file.puts "#{c[:filename]} bundle:ORIGINAL \"#{c[:language]} version #{c[:page_count]} #{c[:mimetype]}\""
+				file.puts "#{c[:filename]}\tbundle:ORIGINAL\tdescription:\"#{c[:language]} version #{c[:page_count]}\""
 			end
 		end
+			#Before we go, let's make sure our empty packages get moved out.  This prevents importing items with no bitstreams.
+	#Three files are expected no matter what: contents, dublin_core.xml, and metadata_undr.xml.  If there are no others, the
+	# package is empty.
+	failed_dir = "failed-#{Date.today.to_s}"
+	package_files = Dir.entries(out_dir)
+	bitstreams = package_files.select { |p| p != "." && p != ".." && p != "contents" && p != "dublin_core.xml" && p != "metadata_undr.xml" }
+	unless bitstreams.length > 0
+		if !File.exists?(failed_dir)
+			Dir.mkdir(failed_dir)
+		end
+		log("Moving failed package from #{out_dir} to #{failed_dir}.")
+		`mv "#{out_dir}" #{failed_dir}`
+	end
 	end
 end
 
@@ -448,7 +458,7 @@ end
 #Process it
 log("Processing entries from #{file}.")
 if File.size?(file) > 117
-	metadata = parse_csv(opts[:filename]) or abort "Unable to read #{opts[:filename]} for some reason.  Check that the file exists and you have permission to read it."
+	metadata = parse_csv(file) or abort "Unable to read #{file} for some reason.  Check that the file exists and you have permission to read it."
 	log("File #{file} contains #{metadata.length} entries.")
 	package(metadata,package_dir) or abort "Something went wrong with packaging..."
 else
