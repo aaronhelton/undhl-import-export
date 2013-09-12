@@ -126,6 +126,8 @@ def parse_csv(csv_file)
 	# If so, then uncommend the following line and comment out the previous definition.
 	#ods_daccess = 'daccess-ods.un.org'
 	
+	debug = 1		#REALLY avoid this unless you need it.  Keep it at 0!!!  You've been warned.
+	
 	transitional = Hash.new{ |h,k| h[k] = Hash.new(&h.default_proc) }
 	metadata = Hash.new
 	p csv_file
@@ -157,15 +159,18 @@ def parse_csv(csv_file)
 	metadata = Hash.new{ |h,k| h[k] = Hash.new(&h.default_proc) }
 	docsymbols = transitional.keys
 	docsymbols.each do |ds|
+		agenda = Array.new
 		languages = transitional[ds].keys
 		if transitional[ds].key?("English") 
 			if transitional[ds]["English"][:distribution].to_s.strip == "GENERAL"
+				p transitional[ds]["English"].keys
 				if 	transitional[ds]["English"][:agen_item]
-					metadata[ds]["agen_item"] = transitional[ds]["English"][:agen_item].to_s.strip
+					agenda << transitional[ds]["English"][:agen_item].to_s.strip 
 				end
 				if 	transitional[ds]["English"][:agen_sub_item]
-					metadata[ds]["agen_sub_item"] = transitional[ds]["English"][:agen_sub_item].to_s.strip
+					agenda << transitional[ds]["English"][:agen_sub_item].to_s.strip 
 				end
+				p agenda.join(" ")
 				metadata[ds] = {
 				"doc_num" => transitional[ds]["English"][:doc_num].to_s.strip,
 				"title" => transitional[ds]["English"][:title].to_s.strip,
@@ -176,6 +181,7 @@ def parse_csv(csv_file)
 				"cr_sales_num" => transitional[ds]["English"][:cr_sales_num].to_s.strip,
 				"issued_date" => transitional[ds]["English"][:issued_date].to_s,
 				"slot_num" => transitional[ds]["English"][:slot_num].to_s.strip,
+				"agen_item" => agenda.join(" ").strip, 
 				"languages" =>  languages }
 			
 				#Get the non-unique stuff next
@@ -192,6 +198,10 @@ def parse_csv(csv_file)
 			end
 		end
 	end
+	if debug == 1
+		log(metadata) 
+	end
+	p metadata["A/68/151"]
 	return metadata
 end
 
@@ -222,15 +232,16 @@ def package(metadata,package_dir)
 			end
 			# issued date needs to be in yyyy-mm-dd format; it should not have arrived null, but it might be a good idea to check it.
 			dubc.puts '  <dcvalue element="date" qualifier="issued">' + metadata[ds]["issued_date"] + '</dcvalue>'
-			if metadata[ds]["isbn"] && metadata[ds]["isbn"] != 'NULL'
+			if metadata[ds]["isbn"] && metadata[ds]["isbn"] != 'NULL' && metadata[ds]["isbn"] != ''
 				dubc.puts '  <dcvalue element="identifier" qualifier="isbn">' + metadata[ds]["isbn"] + '</dcvalue>'
 			end
-			if metadata[ds]["issn"] && metadata[ds]["isbn"] != 'NULL'
+			if metadata[ds]["issn"] && metadata[ds]["issn"] != 'NULL' && metadata[ds]["issn"] != ''
 				dubc.puts '  <dcvalue element="identifier" qualifier="issn">' + metadata[ds]["issn"] + '</dcvalue>'
 			end
 			metadata[ds]["languages"].each do |dc_language|
 				dubc.puts '  <dcvalue element="language" qualifier="none">' + dc_language + '</dcvalue>'
 			end
+			# The following looks like an unreasonable assumption now...
 			dubc.puts '  <dcvalue element="type" qualifier="none">UN resolutions/decisions, UN draft resolutions/decisions</dcvalue>'
 			dubc.puts '</dublin_core>'
 		end
