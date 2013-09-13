@@ -109,7 +109,8 @@ def get_specific_csv(access_key_id, secret_access_key, bucket, filename)
 	#files = AWS::S3::Bucket.find('undhl-dgacm').objects( :prefix => 'Drop' )
 	if AWS::S3::S3Object.exists?("#{filename}",'undhl-dgacm')
 		log("Found #{filename} in S3 bucket.")
-		File.open(latest_file.gsub(/Drop\//,''), 'w') do |f|
+		outfile = filename.split('/').last
+		File.open(outfile, 'w') do |f|
 			AWS::S3::S3Object.stream(filename, 'undhl-dgacm') do |chunk|
 				f.write chunk
 			end
