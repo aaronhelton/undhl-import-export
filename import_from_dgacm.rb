@@ -242,8 +242,6 @@ def package(metadata,package_dir)
 			metadata[ds]["languages"].each do |dc_language|
 				dubc.puts '  <dcvalue element="language" qualifier="none">' + dc_language + '</dcvalue>'
 			end
-			# The following looks like an unreasonable assumption now...
-			dubc.puts '  <dcvalue element="type" qualifier="none">UN resolutions/decisions, UN draft resolutions/decisions</dcvalue>'
 			dubc.puts '</dublin_core>'
 		end
 		#Make a metadata_undr file
