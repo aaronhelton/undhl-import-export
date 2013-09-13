@@ -126,11 +126,11 @@ def parse_csv(csv_file)
 	# If so, then uncommend the following line and comment out the previous definition.
 	#ods_daccess = 'daccess-ods.un.org'
 	
-	debug = 1		#REALLY avoid this unless you need it.  Keep it at 0!!!  You've been warned.
+	debug = 0		#REALLY avoid this unless you need it.  Keep it at 0!!!  You've been warned.
 	
 	transitional = Hash.new{ |h,k| h[k] = Hash.new(&h.default_proc) }
 	metadata = Hash.new
-	p csv_file
+	#p csv_file
 	csv_data = SmarterCSV.process(csv_file, { :col_sep => "\t", :file_encoding => 'utf-8', :verbose => true })
 	csv_data.each do |row|
 		if row[:symbols] =~ /\s\s/
@@ -163,14 +163,14 @@ def parse_csv(csv_file)
 		languages = transitional[ds].keys
 		if transitional[ds].key?("English") 
 			if transitional[ds]["English"][:distribution].to_s.strip == "GENERAL"
-				p transitional[ds]["English"].keys
+				#p transitional[ds]["English"].keys
 				if 	transitional[ds]["English"][:agen_item]
 					agenda << transitional[ds]["English"][:agen_item].to_s.strip 
 				end
 				if 	transitional[ds]["English"][:agen_sub_item]
 					agenda << transitional[ds]["English"][:agen_sub_item].to_s.strip 
 				end
-				p agenda.join(" ")
+				#p agenda.join(" ")
 				metadata[ds] = {
 				"doc_num" => transitional[ds]["English"][:doc_num].to_s.strip,
 				"title" => transitional[ds]["English"][:title].to_s.strip,
@@ -254,7 +254,6 @@ def package(metadata,package_dir)
 			undr.puts ']>'
 			undr.puts '<dublin_core schema="undr">'
 			metadata[ds]["symbols"].each do |s|
-				p s
 				undr.puts '  <dcvalue element="docsymbol" qualifier="none">' + s + '</dcvalue>'
 			end
 			if metadata[ds]["agen_item"] && metadata[ds]["agen_item"] != 'NULL'
@@ -372,7 +371,7 @@ def package(metadata,package_dir)
 		#Write contents file
 		File.open("#{out_dir}/contents", "w+") do |file|
 			contents.each do |c|
-				file.puts "#{c[:filename]}\tbundle:ORIGINAL\tdescription:\"#{c[:language]} version #{c[:page_count]}\""
+				file.puts "#{c[:filename]}\tbundle:ORIGINAL\tdescription:#{c[:language]} version #{c[:page_count]}"
 			end
 		end
 			#Before we go, let's make sure our empty packages get moved out.  This prevents importing items with no bitstreams.
