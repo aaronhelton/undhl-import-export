@@ -118,6 +118,7 @@ def get_specific_csv(access_key_id, secret_access_key, bucket, filename)
 	else
 		Trollop::die "Remote file doesn't exist.  Check the supplied filename and try again."
 	end
+	return outfile
 end
 
 def parse_csv(csv_file)
