@@ -199,9 +199,10 @@ def parse_csv(csv_file)
 		end
 	end
 	if debug == 1
-		log(metadata) 
+		metadata.each do |m|
+			log(m) 
+		end
 	end
-	p metadata["A/68/151"]
 	return metadata
 end
 
@@ -252,7 +253,10 @@ def package(metadata,package_dir)
 			undr.puts entity_replace
 			undr.puts ']>'
 			undr.puts '<dublin_core schema="undr">'
-			undr.puts '  <dcvalue element="docsymbol" qualifier="none">' + ds + '</dcvalue>'
+			metadata[ds]["symbols"].each do |s|
+				p s
+				undr.puts '  <dcvalue element="docsymbol" qualifier="none">' + s + '</dcvalue>'
+			end
 			if metadata[ds]["agen_item"] && metadata[ds]["agen_item"] != 'NULL'
 				if metadata[ds]["agen_sub_item"] && metadata[ds]["agen_sub_item"] != 'NULL'
 					undr.puts '  <dcvalue element="agenda" qualifier="none">' + metadata[ds]["agen_item"] + ": " + metadata[ds]["agen_sub_item"] + '</dcvalue>'
