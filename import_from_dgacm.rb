@@ -244,6 +244,7 @@ def package(metadata,package_dir)
 			metadata[ds]["languages"].each do |dc_language|
 				dubc.puts '  <dcvalue element="language" qualifier="none">' + dc_language + '</dcvalue>'
 			end
+			dubc.puts '  <dcvalue element="type" qualifier="none">Parliamentary Document</dcvalue>'
 			dubc.puts '</dublin_core>'
 		end
 		#Make a metadata_undr file
