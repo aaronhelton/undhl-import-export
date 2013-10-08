@@ -124,7 +124,7 @@ EOS
   opt :intake_handle, "Specify the handle of the intake collection.  Required.", :type => String
   opt :email, "Tells itp_daily to send the results via email."
   opt :recipients, "Specify one or more email addresses as report recipients.  At least one address is required when using the --email flag.", :type => :strings
-  opt :credentials, "Specify a file containing a username and password combination, separated by '::' and having file permissions 0600", :type => String
+  opt :credentials, "Specify a file containing authentication details for the email server.  The file should contain a username and password separated by '::' and have file permissions 0600", :type => String
   opt :debug, "For extra visibility into the script and its functions."
 
 end
@@ -132,7 +132,7 @@ Trollop::die :intake_handle, "is a required argument.  Please specify it" unless
 Trollop::die :recipients, "are required when the --email flag is set" unless opts[:recipients] if opts[:email]
 Trollop::die :credentials, "file is required when using email delivery" unless opts[:credentials] if opts[:email]
 Trollop::die :credentials, "file not found.  Check the path and try again" unless File.exists?(opts[:credentials]) if opts[:credentials]
-Trollop::die :credentials, "file is world readable.  chmod 600 #{opts[:credentials]} and invoke this script again" if opts[:credentials] && File.world_writable?(opts[:credentials])
+Trollop::die :credentials, "file is world readable.  chmod 600 #{opts[:credentials]} and invoke this script again" if opts[:credentials] && File.world_readable?(opts[:credentials])
 
 #Precaution included with all scripts in this package.  No telling what order things get executed in.
 if !File.exists?('logs')
