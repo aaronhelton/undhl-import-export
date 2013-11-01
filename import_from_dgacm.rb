@@ -70,7 +70,7 @@ def getext(mimetype)
 end
 
 #Function definitions.  Names should be self-explanatory
-def get_latest_csv(access_key_id, secret_access_key, csv_type)
+def get_latest_csv(access_key_id, secret_access_key)
 	AWS::S3::Base.establish_connection!(
 		:access_key_id => access_key_id,
 		:secret_access_key => secret_access_key
@@ -83,14 +83,14 @@ def get_latest_csv(access_key_id, secret_access_key, csv_type)
 	latest_file = ''
 
 	files.each do |file|
-		if file.key.downcase =~ /^drop\/#{csv_type}/
+		if file.key.downcase =~ /^drop\/dhl/
 			mtime = DateTime.parse("#{file.about["last-modified"]}")
 			if mtime > latest_time
 				latest_file = file.key
 			end
 		end
 	end
-	log("Getting latest #{csv_type} file, found #{latest_file.gsub(/Drop\//,'')}")
+	log("Getting latest CSV file, found #{latest_file.gsub(/Drop\//,'')}")
 	File.open(latest_file.gsub(/Drop\//,''), 'w') do |f|
 		AWS::S3::S3Object.stream(latest_file, 'undhl-dgacm') do |chunk|
 			f.write chunk
@@ -135,10 +135,10 @@ def parse_csv(csv_file)
 	#p csv_file
 	csv_data = SmarterCSV.process(csv_file, { :col_sep => "\t", :file_encoding => 'utf-8', :verbose => true })
 	csv_data.each do |row|
-		if row[:symbols] =~ /\s\s/
-			docsymbol = row[:symbols].split(/\s+/)[0]
+		if row[:symbol] =~ /\s\s/
+			docsymbol = row[:symbol].split(/\s+/)[0]
 		else
-			docsymbol = row[:symbols]
+			docsymbol = row[:symbol]
 		end
 		case row[:lang]
 			when "A"
@@ -161,29 +161,27 @@ def parse_csv(csv_file)
 	metadata = Hash.new{ |h,k| h[k] = Hash.new(&h.default_proc) }
 	docsymbols = transitional.keys
 	docsymbols.each do |ds|
-		agenda = Array.new
+		#agenda = Array.new
+		agenda = ''
 		languages = transitional[ds].keys
 		if transitional[ds].key?("English") 
-			if transitional[ds]["English"][:distribution].to_s.strip == "GENERAL"
+			if transitional[ds]["English"][:distribution].to_s.strip.downcase == "GENERAL".downcase
 				#p transitional[ds]["English"].keys
-				if 	transitional[ds]["English"][:agen_item]
-					agenda << transitional[ds]["English"][:agen_item].to_s.strip 
-				end
-				if 	transitional[ds]["English"][:agen_sub_item]
-					agenda << transitional[ds]["English"][:agen_sub_item].to_s.strip 
+				if 	transitional[ds]["English"][:agen_num]
+					agenda = transitional[ds]["English"][:agen_num].to_s.strip 
 				end
 				#p agenda.join(" ")
 				metadata[ds] = {
 				"doc_num" => transitional[ds]["English"][:doc_num].to_s.strip,
 				"title" => transitional[ds]["English"][:title].to_s.strip,
-				"symbols" => transitional[ds]["English"][:symbols].to_s.strip.split(/\s+/),
+				"symbols" => transitional[ds]["English"][:symbol].to_s.strip.split(/\s+/),
 				"distribution" => transitional[ds]["English"][:distribution].to_s.strip,
 				"isbn" => transitional[ds]["English"][:isbn].to_s.strip,
 				"issn" => transitional[ds]["English"][:issn].to_s.strip,
 				"cr_sales_num" => transitional[ds]["English"][:cr_sales_num].to_s.strip,
-				"issued_date" => transitional[ds]["English"][:issued_date].to_s,
+				"issued_date" => transitional[ds]["English"][:publication_date].to_s,
 				"slot_num" => transitional[ds]["English"][:slot_num].to_s.strip,
-				"agen_item" => agenda.join(" ").strip, 
+				"agen_num" => agenda.strip, 
 				"languages" =>  languages }
 			
 				#Get the non-unique stuff next
@@ -406,16 +404,12 @@ EOS
 
 	opt :remote, "Get the file from the remote S3 bucket.  Requires a credentials file"
 	opt :get_latest, "Instead of specifying a filename, tell the script to get the latest available file."
-	opt :type, "The type of file being processed, slotted or non-slotted.", :type => String
 	opt :local, "Get the file from a local file system."
 	opt :credentials, "Path to a credentials file for S3.", :type => String
 	opt :filename, "Filename containing metadata to parse.  Required if specifying a local file.", :type => String
 end
 Trollop::die :credentials, "<file> must be supplied" unless opts[:credentials] if opts[:remote]
 Trollop::die :credentials, "<file> must exist" unless File.exist?(opts[:credentials]) if opts[:remote] && opts[:credentials]
-if opts[:get_latest]
-	Trollop::die :type, "is required unless specifying a filename.  Can be 'slotted' or 'non-slotted'." unless opts[:type]
-end
 Trollop::die :filename, "is required" if opts[:local] && !opts[:filename]
 Trollop::die :filename, "must exist" unless File.exist?(opts[:filename]) if opts[:local] && opts[:filename]
 
@@ -434,25 +428,13 @@ end
 
 log("Beginning DGACM packaging")
 #Standard option 1a: remote with credentials, get latest slotted file
-if opts[:remote] && opts[:credentials] && opts[:get_latest] && opts[:type] == 'slotted'
+if opts[:remote] && opts[:credentials] && opts[:get_latest] 
 	creds = File.read(opts[:credentials]) .split('::')
 	bucket = creds[0]
 	access_key_id = creds[1]
 	secret_access_key = creds[2]
-	type = opts[:type]
 	
-	file = get_latest_csv(access_key_id,secret_access_key,type)
-end
-
-#Standard option 1b: remote with credentials, get latest non-slotted file
-if opts[:remote] && opts[:credentials] && opts[:get_latest] && opts[:type] == 'non-slotted'
-	creds = File.read(opts[:credentials]) .split('::')
-	bucket = creds[0]
-	access_key_id = creds[1]
-	secret_access_key = creds[2]
-	type = opts[:type]
-	
-	file = get_latest_csv(access_key_id, secret_access_key, 'non-slotted') 
+	file = get_latest_csv(access_key_id,secret_access_key)
 end
 
 #Standard option 2: remote with credentials, get specific file (doesn't matter slotted vs non-slotted)
