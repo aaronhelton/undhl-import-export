@@ -65,7 +65,7 @@ def generate_report(metadata)
           else
             title = ""
           end
-          if r["undr.docsymbol[en]"]
+          if r["undr.docsymbol[en]"] 
             docsymbol = r["undr.docsymbol[en]"]
           elsif r["undr.docsymbol"]
             docysmbol =  r["undr.docsymbol"]
@@ -77,6 +77,7 @@ def generate_report(metadata)
           elsif r["dc.identifier.uri[]"]
             uri = r["dc.identifier.uri[]"]
           end
+          next unless docsymbol =~ /\A(A|E|S)\//
 	  report = report + <<-EOS
 Date Issued: #{date_issued}
 Document Symbol(s): #{docsymbol}
