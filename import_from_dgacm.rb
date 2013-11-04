@@ -11,6 +11,7 @@ require 'date'
 require 'pdf-reader'	#External ruby gem.  gem install pdf-reader to install it
 require 'mimemagic'	#External ruby gem.  gem install mimemagic to install it.
 require 'trollop'	#External ruby gem.  gem install trollop to install it
+require 'rexml/document'
 
 def log(message)
 	logfile = "logs/import.log"
@@ -30,6 +31,19 @@ end
 def fails(data)
 	# This one outputs a CSV of metadata that can be re-processed later (specified via command line)
 	
+end
+
+def get_agenda(agenda_key)
+	log("Looking up agenda text for #{agenda_key}")
+	agenda_text = nil
+	xmldoc = REXML::Document.new File.read 'lib/agenda.xml'
+	a = xmldoc.elements["//agendas/agenda/item[@id='#{agenda_key}']/label"].text
+	if a
+		log(a)
+		return a
+	else
+		return nil
+	end
 end
 
 def lxcode(language)
@@ -168,7 +182,7 @@ def parse_csv(csv_file)
 			if transitional[ds]["English"][:distribution].to_s.strip.downcase == "GENERAL".downcase
 				#p transitional[ds]["English"].keys
 				if 	transitional[ds]["English"][:agen_num]
-					agenda = transitional[ds]["English"][:agen_num].to_s.strip 
+					agenda = transitional[ds]["English"][:agen_num].to_s
 				end
 				#p agenda.join(" ")
 				metadata[ds] = {
@@ -181,7 +195,7 @@ def parse_csv(csv_file)
 				"cr_sales_num" => transitional[ds]["English"][:cr_sales_num].to_s.strip,
 				"issued_date" => transitional[ds]["English"][:publication_date].to_s,
 				"slot_num" => transitional[ds]["English"][:slot_num].to_s.strip,
-				"agen_num" => agenda.strip, 
+				"agen_num" => agenda, 
 				"languages" =>  languages }
 			
 				#Get the non-unique stuff next
@@ -246,6 +260,7 @@ def package(metadata,package_dir)
 			dubc.puts '</dublin_core>'
 		end
 		#Make a metadata_undr file
+		agenda_doc = ''
 		File.open("#{out_dir}/metadata_undr.xml", "w+") do |undr|
 			undr.puts '<?xml version="1.0" encoding="UTF-8"?>'
 			undr.puts '<!DOCTYPE content ['
@@ -254,12 +269,21 @@ def package(metadata,package_dir)
 			undr.puts '<dublin_core schema="undr">'
 			metadata[ds]["symbols"].each do |s|
 				undr.puts '  <dcvalue element="docsymbol" qualifier="none">' + s + '</dcvalue>'
+				if s =~ /\/67\//
+					agenda_doc = 'A67251'
+				elsif s =~ /\/68\//
+					agenda_doc = 'A68251'
+				elsif s =~ /E\/.+\/2013\//
+					agenda_doc = 'E2013100'
+				end
 			end
-			if metadata[ds]["agen_item"] && metadata[ds]["agen_item"] != 'NULL'
-				if metadata[ds]["agen_sub_item"] && metadata[ds]["agen_sub_item"] != 'NULL'
-					undr.puts '  <dcvalue element="agenda" qualifier="none">' + metadata[ds]["agen_item"] + ": " + metadata[ds]["agen_sub_item"] + '</dcvalue>'
-				else
-					undr.puts '  <dcvalue element="agenda" qualifier="none">' + metadata[ds]["agen_item"] + '</dcvalue>'
+			if metadata[ds]["agen_num"] && metadata[ds]["agen_num"] != 'NULL' && metadata[ds]["agen_num"].size > 1
+				log(metadata[ds]["agen_num"])
+				agenda_key = agenda_doc + metadata[ds]["agen_num"].gsub(/\(/, '').gsub(/\)/, '').gsub(/\s+/, '').gsub(/\*/,'')				
+				agenda_text = get_agenda(agenda_key)
+				if agenda_text
+					log(agenda_text.inspect)
+					undr.puts '  <dcvalue element="agenda" qualifier="none">' + agenda_text + '</dcvalue>'
 				end
 			end
 			undr.puts '</dublin_core>'
@@ -454,7 +478,7 @@ end
 
 #Process it
 log("Processing entries from #{file}.")
-if File.size?(file) > 117
+if File.size?(file) > 110
 	metadata = parse_csv(file) or abort "Unable to read #{file} for some reason.  Check that the file exists and you have permission to read it."
 	log("File #{file} contains #{metadata.length} entries.")
 	package(metadata,package_dir) or abort "Something went wrong with packaging..."
