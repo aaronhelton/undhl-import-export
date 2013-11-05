@@ -1,0 +1,2031 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE content [<!ENTITY quot   "&#34;"><!ENTITY nbsp   "&#160;"><!ENTITY iexcl  "&#161;"><!ENTITY cent   "&#162;"><!ENTITY pound  "&#163;"><!ENTITY curren "&#164;"><!ENTITY yen   "&#165;"><!ENTITY brvbar "&#166;"><!ENTITY sect   "&#167;"><!ENTITY uml    "&#168;"><!ENTITY copy   "&#169;"><!ENTITY ordf   "&#170;"><!ENTITY laquo  "&#171;"><!ENTITY not    "&#172;"><!ENTITY shy    "&#173;"><!ENTITY reg    "&#174;"><!ENTITY macr   "&#175;"><!ENTITY deg    "&#176;"><!ENTITY plusmn "&#177;"><!ENTITY sup2   "&#178;"><!ENTITY sup3   "&#179;"><!ENTITY acute  "&#180;"><!ENTITY micro  "&#181;"><!ENTITY para   "&#182;"><!ENTITY middot "&#183;"><!ENTITY cedil  "&#184;"><!ENTITY sup1   "&#185;"><!ENTITY ordm   "&#186;"><!ENTITY raquo  "&#187;"><!ENTITY frac14 "&#188;"><!ENTITY frac12 "&#189;"><!ENTITY frac34 "&#190;"><!ENTITY iquest "&#191;"><!ENTITY Agrave "&#192;"><!ENTITY Aacute "&#193;"><!ENTITY Acirc  "&#194;"><!ENTITY Atilde "&#195;"><!ENTITY Auml   "&#196;"><!ENTITY Aring  "&#197;"><!ENTITY AElig  "&#198;"><!ENTITY Ccedil "&#199;"><!ENTITY Egrave "&#200;"><!ENTITY Eacute "&#201;"><!ENTITY Ecirc  "&#202;"><!ENTITY Euml   "&#203;"><!ENTITY Igrave "&#204;"><!ENTITY Iacute "&#205;"><!ENTITY Icirc  "&#206;"><!ENTITY Iuml  "&#207;"><!ENTITY ETH    "&#208;"><!ENTITY Ntilde "&#209;"><!ENTITY Ograve "&#210;"><!ENTITY Oacute "&#211;"><!ENTITY Ocirc  "&#212;"><!ENTITY Otilde "&#213;"><!ENTITY Ouml  "&#214;"><!ENTITY times  "&#215;"><!ENTITY Oslash "&#216;"><!ENTITY Ugrave "&#217;"><!ENTITY Uacute "&#218;"><!ENTITY Ucirc  "&#219;"><!ENTITY Uuml   "&#220;"><!ENTITY Yacute "&#221;"><!ENTITY THORN  "&#222;"><!ENTITY szlig  "&#223;"><!ENTITY agrave "&#224;"><!ENTITY aacute "&#225;"><!ENTITY acirc  "&#226;"><!ENTITY atilde "&#227;"><!ENTITY auml   "&#228;"><!ENTITY aring  "&#229;"><!ENTITY aelig  "&#230;"><!ENTITY ccedil "&#231;"><!ENTITY egrave "&#232;"><!ENTITY eacute "&#233;"><!ENTITY ecirc  "&#234;"><!ENTITY euml   "&#235;"><!ENTITY igrave "&#236;"><!ENTITY iacute "&#237;"><!ENTITY icirc  "&#238;"><!ENTITY iuml   "&#239;"><!ENTITY eth    "&#240;"><!ENTITY ntilde "&#241;"><!ENTITY ograve "&#242;"><!ENTITY oacute "&#243;"><!ENTITY ocirc  "&#244;"><!ENTITY otilde "&#245;"><!ENTITY ouml   "&#246;"><!ENTITY divide "&#247;"><!ENTITY oslash "&#248;"><!ENTITY ugrave "&#249;"><!ENTITY uacute "&#250;"><!ENTITY ucirc  "&#251;"><!ENTITY uuml   "&#252;"><!ENTITY yacute "&#253;"><!ENTITY thorn  "&#254;"><!ENTITY yuml   "&#255;">]>
+<agendas>
+	<agenda id="A67251">
+		<item id="A672511">
+			<label>A/67/251: 1 - Opening of the session by the President of the General Assembly</label>
+		</item>
+		<item id="A672512">
+			<label>A/67/251: 2 - Minute of silent prayer or meditation</label>
+		</item>
+		<item id="A672513">
+			<label>A/67/251: 3 - Credentials of representatives to the sixty-seventh session of the General Assembly</label>
+		</item>
+		<item id="A672513a">
+			<label>A/67/251: 3a - Appointment of the members of the Credentials Committee</label>
+		</item>
+		<item id="A672513b">
+			<label>A/67/251: 3b - Report of the Credentials Committee</label>
+		</item>
+		<item id="A672514">
+			<label>A/67/251: 4 - Election of the President of the General Assembly</label>
+		</item>
+		<item id="A672515">
+			<label>A/67/251: 5 - Election of the officers of the Main Committees</label>
+		</item>
+		<item id="A672516">
+			<label>A/67/251: 6 - Election of the Vice-Presidents of the General Assembly</label>
+		</item>
+		<item id="A672517">
+			<label>A/67/251: 7 - Organization of work, adoption of the agenda and allocation of items: reports of the General Committee</label>
+		</item>
+		<item id="A672518">
+			<label>A/67/251: 8 - General debate</label>
+		</item>
+		<item id="A672519">
+			<label>A/67/251: 9 - Report of the Economic and Social Council</label>
+		</item>
+		<item id="A6725110">
+			<label>A/67/251: 10 - Return or restitution of cultural property to the countries of origin</label>
+		</item>
+		<item id="A6725111">
+			<label>A/67/251: 11 - Implementation of the Declaration of Commitment on HIV/AIDS and the Political Declarations on HIV/AIDS</label>
+		</item>
+		<item id="A6725112">
+			<label>A/67/251: 12 - Sport for peace and development</label>
+		</item>
+		<item id="A6725113">
+			<label>A/67/251: 13 - 2001-2010: Decade to Roll Back Malaria in Developing Countries,Particularly in Africa</label>
+		</item>
+		<item id="A6725114">
+			<label>A/67/251: 14 - Integrated and coordinated implementation of and follow-up to the outcomes of the major United Nations conferences and summits in the economic, social and related fields</label>
+		</item>
+		<item id="A6725115">
+			<label>A/67/251: 15 - Culture of peace</label>
+		</item>
+		<item id="A6725116">
+			<label>A/67/251: 16 - The role of the United Nations in promoting a new global human order</label>
+		</item>
+		<item id="A6725117">
+			<label>A/67/251: 17 - Information and communications technologies for development</label>
+		</item>
+		<item id="A6725118">
+			<label>A/67/251: 18 - Macroeconomic policy questions</label>
+		</item>
+		<item id="A6725118a">
+			<label>A/67/251: 18a - International trade and development</label>
+		</item>
+		<item id="A6725118b">
+			<label>A/67/251: 18b - International financial system and development</label>
+		</item>
+		<item id="A6725118c">
+			<label>A/67/251: 18c - External debt sustainability and development</label>
+		</item>
+		<item id="A6725119">
+			<label>A/67/251: 19 - Follow-up to and implementation of the outcome of the 2002 International Conference on Financing for Development and the 2008 Review Conference</label>
+		</item>
+		<item id="A6725120">
+			<label>A/67/251: 20 - Sustainable development</label>
+		</item>
+		<item id="A6725120a">
+			<label>A/67/251: 20a - Implementation of Agenda 21, the Programme for the Further Implementation of Agenda 21 and the outcomes of the World Summit on Sustainable Development and of the United Nations Conference on Sustainable Development</label>
+		</item>
+		<item id="A6725120b">
+			<label>A/67/251: 20b - Follow-up to and implementation of the Mauritius Strategy for the Further Implementation of the Programme of Action for the Sustainable Development of Small Island Developing States</label>
+		</item>
+		<item id="A6725120c">
+			<label>A/67/251: 20c - International Strategy for Disaster Reduction</label>
+		</item>
+		<item id="A6725120d">
+			<label>A/67/251: 20d - Protection of global climate for present and future generations ofhumankind</label>
+		</item>
+		<item id="A6725120e">
+			<label>A/67/251: 20e - Implementation of the United Nations Convention to Combat Desertification in Those Countries Experiencing Serious Drought and/or Desertification, Particularly in Africa</label>
+		</item>
+		<item id="A6725120f">
+			<label>A/67/251: 20f - Convention on Biological Diversity</label>
+		</item>
+		<item id="A6725120g">
+			<label>A/67/251: 20g - Report of the Governing Council of the United Nations Environment Programme on its twelfth special session</label>
+		</item>
+		<item id="A6725120h">
+			<label>A/67/251: 20h - Harmony with Nature</label>
+		</item>
+		<item id="A6725120i">
+			<label>A/67/251: 20i - Promotion of new and renewable sources of energy</label>
+		</item>
+		<item id="A6725121">
+			<label>A/67/251: 21 - Implementation of the outcome of the United Nations Conference on Human Settlements (Habitat II) and strengthening of the United Nations Human Settlements Programme (UN-Habitat)</label>
+		</item>
+		<item id="A6725122">
+			<label>A/67/251: 22 - Globalization and interdependence</label>
+		</item>
+		<item id="A6725122a">
+			<label>A/67/251: 22a - Globalization and interdependence</label>
+		</item>
+		<item id="A6725122b">
+			<label>A/67/251: 22b - International migration and development</label>
+		</item>
+		<item id="A6725123">
+			<label>A/67/251: 23 - Groups of countries in special situations</label>
+		</item>
+		<item id="A6725123a">
+			<label>A/67/251: 23a - Follow-up to the Fourth United Nations Conference on the Least Developed Countries</label>
+		</item>
+		<item id="A6725123b">
+			<label>A/67/251: 23b - Specific actions related to the particular needs and problems oflandlocked developing countries: outcome of the International Ministerial Conference of Landlocked and Transit Developing Countries and Donor Countries and International Financial and Development Institutions on Transit Transport Cooperation</label>
+		</item>
+		<item id="A6725124">
+			<label>A/67/251: 24 - Eradication of poverty and other development issues</label>
+		</item>
+		<item id="A6725124a">
+			<label>A/67/251: 24a - Implementation of the Second United Nations Decade for the Eradication of Poverty (2008-2017)</label>
+		</item>
+		<item id="A6725124b">
+			<label>A/67/251: 24b - Industrial development cooperation</label>
+		</item>
+		<item id="A6725125">
+			<label>A/67/251: 25 - Operational activities for development</label>
+		</item>
+		<item id="A6725125a">
+			<label>A/67/251: 25a - Quadrennial comprehensive policy review of operational activities fordevelopment of the United Nations system</label>
+		</item>
+		<item id="A6725125b">
+			<label>A/67/251: 25b - South-South cooperation</label>
+		</item>
+		<item id="A6725126">
+			<label>A/67/251: 26 - Agriculture development and food security</label>
+		</item>
+		<item id="A6725127">
+			<label>A/67/251: 27 - Social development</label>
+		</item>
+		<item id="A6725127a">
+			<label>A/67/251: 27a - Implementation of the outcome of the World Summit for Social Development and of the twenty-fourth special session of the General Assembly</label>
+		</item>
+		<item id="A6725127b">
+			<label>A/67/251: 27b - Social development, including questions relating to the world socialsituation and to youth, ageing, disabled persons and the family</label>
+		</item>
+		<item id="A6725127c">
+			<label>A/67/251: 27c - Follow-up to the International Year of Older Persons: Second World Assembly on Ageing</label>
+		</item>
+		<item id="A6725128">
+			<label>A/67/251: 28 - Advancement of women</label>
+		</item>
+		<item id="A6725128a">
+			<label>A/67/251: 28a - Advancement of women</label>
+		</item>
+		<item id="A6725128b">
+			<label>A/67/251: 28b - Implementation of the outcome of the Fourth World Conference on Women and of the twenty-third special session of the General Assembly</label>
+		</item>
+		<item id="A6725129">
+			<label>A/67/251: 29 - People's empowerment and a peace-centric development model</label>
+		</item>
+		<item id="A6725130">
+			<label>A/67/251: 30 - Report of the Security Council</label>
+		</item>
+		<item id="A6725131">
+			<label>A/67/251: 31 - Report of the Peacebuilding Commission</label>
+		</item>
+		<item id="A6725132">
+			<label>A/67/251: 32 - The role of diamonds in fuelling conflict</label>
+		</item>
+		<item id="A6725133">
+			<label>A/67/251: 33 - Prevention of armed conflict</label>
+		</item>
+		<item id="A6725134">
+			<label>A/67/251: 34 - Protracted conflicts in the GUAM area and their implications for internationalpeace, security and development</label>
+		</item>
+		<item id="A6725135">
+			<label>A/67/251: 35 - Zone of peace and cooperation of the South Atlantic</label>
+		</item>
+		<item id="A6725136">
+			<label>A/67/251: 36 - The situation in the Middle East</label>
+		</item>
+		<item id="A6725137">
+			<label>A/67/251: 37 - Question of Palestine</label>
+		</item>
+		<item id="A6725138">
+			<label>A/67/251: 38 - The situation in Afghanistan</label>
+		</item>
+		<item id="A6725139">
+			<label>A/67/251: 39 - The situation in the occupied territories of Azerbaijan</label>
+		</item>
+		<item id="A6725140">
+			<label>A/67/251: 40 - Question of the Comorian island of Mayotte</label>
+		</item>
+		<item id="A6725141">
+			<label>A/67/251: 41 - Necessity of ending the economic, commercial and financial embargo imposedby the United States of America against Cuba</label>
+		</item>
+		<item id="A6725142">
+			<label>A/67/251: 42 - The situation in Central America: progress in fashioning a region of peace,freedom, democracy and development</label>
+		</item>
+		<item id="A6725143">
+			<label>A/67/251: 43 - Question of Cyprus</label>
+		</item>
+		<item id="A6725144">
+			<label>A/67/251: 44 - Armed aggression against the Democratic Republic of the Congo</label>
+		</item>
+		<item id="A6725145">
+			<label>A/67/251: 45 - Question of the Falkland Islands (Malvinas)</label>
+		</item>
+		<item id="A6725146">
+			<label>A/67/251: 46 - The situation of democracy and human rights in Haiti</label>
+		</item>
+		<item id="A6725147">
+			<label>A/67/251: 47 - Armed Israeli aggression against the Iraqi nuclear installations and its graveconsequences for the established international system concerning the peacefuluses of nuclear energy, the non-proliferation of nuclear weapons andinternational peace and security</label>
+		</item>
+		<item id="A6725148">
+			<label>A/67/251: 48 - Consequences of the Iraqi occupation of and aggression against Kuwait</label>
+		</item>
+		<item id="A6725149">
+			<label>A/67/251: 49 - University for Peace</label>
+		</item>
+		<item id="A6725150">
+			<label>A/67/251: 50 - Effects of atomic radiation</label>
+		</item>
+		<item id="A6725151">
+			<label>A/67/251: 51 - International cooperation in the peaceful uses of outer space</label>
+		</item>
+		<item id="A6725152">
+			<label>A/67/251: 52 - United Nations Relief and Works Agency for Palestine Refugees in the Near East</label>
+		</item>
+		<item id="A6725153">
+			<label>A/67/251: 53 - Report of the Special Committee to Investigate Israeli Practices Affecting the Human Rights of the Palestinian People and Other Arabs of the Occupied Territories</label>
+		</item>
+		<item id="A6725154">
+			<label>A/67/251: 54 - Comprehensive review of the whole question of peacekeeping operations in all the ir aspects</label>
+		</item>
+		<item id="A6725155">
+			<label>A/67/251: 55 - Questions relating to information</label>
+		</item>
+		<item id="A6725156">
+			<label>A/67/251: 56 - Information from Non-Self-Governing Territories transmitted under Article 73 e of the Charter of the United Nations</label>
+		</item>
+		<item id="A6725157">
+			<label>A/67/251: 57 - Economic and other activities which affect the interests of the peoples of the Non-Self-Governing Territories</label>
+		</item>
+		<item id="A6725158">
+			<label>A/67/251: 58 - Implementation of the Declaration on the Granting of Independence to Colonial Countries and Peoples by the specialized agencies and the international institutions associated with the United Nations</label>
+		</item>
+		<item id="A6725159">
+			<label>A/67/251: 59 - Offers by Member States of study and training facilities for inhabitants of Non-Self-Governing Territories</label>
+		</item>
+		<item id="A6725160">
+			<label>A/67/251: 60 - Implementation of the Declaration on the Granting of Independence to Colonial Countries and Peoples</label>
+		</item>
+		<item id="A6725161">
+			<label>A/67/251: 61 - Permanent sovereignty of the Palestinian people in the Occupied Palestinian Territory, including East Jerusalem, and of the Arab population in the occupied Syrian Golan over their natural resources</label>
+		</item>
+		<item id="A6725162">
+			<label>A/67/251: 62 - Report of the United Nations High Commissioner for Refugees, questionsrelating to refugees, returnees and displaced persons and humanitarianquestions</label>
+		</item>
+		<item id="A6725163">
+			<label>A/67/251: 63 - New Partnership for Africa's Development: progress in implementation andinternational support</label>
+		</item>
+		<item id="A6725163a">
+			<label>A/67/251: 63a - New Partnership for Africa's Development: progress in implementation and international support</label>
+		</item>
+		<item id="A6725163b">
+			<label>A/67/251: 63b - Causes of conflict and the promotion of durable peace and sustainabledevelopment in Africa</label>
+		</item>
+		<item id="A6725164">
+			<label>A/67/251: 64 - Report of the Human Rights Council</label>
+		</item>
+		<item id="A6725165">
+			<label>A/67/251: 65 - Promotion and protection of the rights of children</label>
+		</item>
+		<item id="A6725165a">
+			<label>A/67/251: 65a - Promotion and protection of the rights of children</label>
+		</item>
+		<item id="A6725165b">
+			<label>A/67/251: 65b - Follow-up to the outcome of the special session on children</label>
+		</item>
+		<item id="A6725166">
+			<label>A/67/251: 66 - Rights of indigenous peoples</label>
+		</item>
+		<item id="A6725166a">
+			<label>A/67/251: 66a - Rights of indigenous peoples</label>
+		</item>
+		<item id="A6725166b">
+			<label>A/67/251: 66b - Second International Decade of the World's Indigenous People</label>
+		</item>
+		<item id="A6725167">
+			<label>A/67/251: 67 - Elimination of racism, racial discrimination, xenophobia and relatedintolerance</label>
+		</item>
+		<item id="A6725167a">
+			<label>A/67/251: 67a - Elimination of racism, racial discrimination, xenophobia and relatedintolerance</label>
+		</item>
+		<item id="A6725167b">
+			<label>A/67/251: 67b - Comprehensive implementation of and follow-up to the Durban Declaration and Programme of Action</label>
+		</item>
+		<item id="A6725168">
+			<label>A/67/251: 68 - Right of peoples to self-determination</label>
+		</item>
+		<item id="A6725169">
+			<label>A/67/251: 69 - Promotion and protection of human rights</label>
+		</item>
+		<item id="A6725169a">
+			<label>A/67/251: 69a - Implementation of human rights instruments</label>
+		</item>
+		<item id="A6725169b">
+			<label>A/67/251: 69b - Human rights questions, including alternative approaches for improving the effective enjoyment of human rights and fundamental freedoms</label>
+		</item>
+		<item id="A6725169c">
+			<label>A/67/251: 69c - Human rights situations and reports of special rapporteurs andrepresentatives</label>
+		</item>
+		<item id="A6725169d">
+			<label>A/67/251: 69d - Comprehensive implementation of and follow-up to the Vienna Declaration and Programme of Action</label>
+		</item>
+		<item id="A6725170">
+			<label>A/67/251: 70 - Strengthening of the coordination of humanitarian and disaster relief assistance of the United Nations, including special economic assistance</label>
+		</item>
+		<item id="A6725170a">
+			<label>A/67/251: 70a - Strengthening of the coordination of emergency humanitarian assistance of the United Nations</label>
+		</item>
+		<item id="A6725170b">
+			<label>A/67/251: 70b - Assistance to the Palestinian people</label>
+		</item>
+		<item id="A6725170c">
+			<label>A/67/251: 70c - Special economic assistance to individual countries or regions</label>
+		</item>
+		<item id="A6725171">
+			<label>A/67/251: 71 - Report of the International Court of Justice</label>
+		</item>
+		<item id="A6725172">
+			<label>A/67/251: 72 - Report of the International Criminal Tribunal for the Prosecution of Persons Responsible for Genocide and Other Serious Violations of International Humanitarian Law Committed in the Territory of Rwanda and Rwandan Citizens Responsible for Genocide and Other Such Violations Committed in the Territory of Neighbouring States between 1 January and 31 December 1994</label>
+		</item>
+		<item id="A6725173">
+			<label>A/67/251: 73 - Report of the International Tribunal for the Prosecution of Persons Responsible for Serious Violations of International Humanitarian Law Committed in the Territory of the Former Yugoslavia since 1991</label>
+		</item>
+		<item id="A6725174">
+			<label>A/67/251: 74 - Report of the International Criminal Court</label>
+		</item>
+		<item id="A6725175">
+			<label>A/67/251: 75 - Oceans and the law of the sea</label>
+		</item>
+		<item id="A6725175a">
+			<label>A/67/251: 75a - Oceans and the law of the sea</label>
+		</item>
+		<item id="A6725175b">
+			<label>A/67/251: 75b - Sustainable fisheries, including through the 1995 Agreement for the Implementation of the Provisions of the United Nations Convention on the Law of the Sea of 10 December 1982 relating to the Conservation and Management of Straddling Fish Stocks and Highly Migratory Fish Stocks, and related instruments</label>
+		</item>
+		<item id="A6725176">
+			<label>A/67/251: 76 - Criminal accountability of United Nations officials and experts on mission</label>
+		</item>
+		<item id="A6725177">
+			<label>A/67/251: 77 - Report of the United Nations Commission on International Trade Law on the work of its forty-fifth session</label>
+		</item>
+		<item id="A6725178">
+			<label>A/67/251: 78 - United Nations Programme of Assistance in the Teaching, Study,Dissemination and Wider Appreciation of International Law</label>
+		</item>
+		<item id="A6725179">
+			<label>A/67/251: 79 - Report of the International Law Commission on the work of its sixty-third andsixty-fourth sessions</label>
+		</item>
+		<item id="A6725180">
+			<label>A/67/251: 80 - Status of the Protocols Additional to the Geneva Conventions of 1949 andrelating to the protection of victims of armed conflicts</label>
+		</item>
+		<item id="A6725181">
+			<label>A/67/251: 81 - Consideration of effective measures to enhance the protection, security andsafety of diplomatic and consular missions and representatives</label>
+		</item>
+		<item id="A6725182">
+			<label>A/67/251: 82 - Report of the Special Committee on the Charter of the United Nations and on the Strengthening of the Role of the Organization</label>
+		</item>
+		<item id="A6725183">
+			<label>A/67/251: 83 - The rule of law at the national and international levels</label>
+		</item>
+		<item id="A6725184">
+			<label>A/67/251: 84 - The scope and application of the principle of universal jurisdiction</label>
+		</item>
+		<item id="A6725185">
+			<label>A/67/251: 85 - Report of the International Atomic Energy Agency</label>
+		</item>
+		<item id="A6725186">
+			<label>A/67/251: 86 - Reduction of military budgets</label>
+		</item>
+		<item id="A6725187">
+			<label>A/67/251: 87 - African Nuclear-Weapon-Free Zone Treaty</label>
+		</item>
+		<item id="A6725188">
+			<label>A/67/251: 88 - Maintenance of international security -- good-neighbourliness, stability anddevelopment in South-Eastern Europe</label>
+		</item>
+		<item id="A6725189">
+			<label>A/67/251: 89 - Developments in the field of information and telecommunications in the context of international security</label>
+		</item>
+		<item id="A6725190">
+			<label>A/67/251: 90 - Establishment of a nuclear-weapon-free zone in the region of the Middle East</label>
+		</item>
+		<item id="A6725191">
+			<label>A/67/251: 91 - Conclusion of effective international arrangements to assure non-nuclearweapon States against the use or threat of use of nuclear weapons</label>
+		</item>
+		<item id="A6725192">
+			<label>A/67/251: 92 - Prevention of an arms race in outer space</label>
+		</item>
+		<item id="A6725193">
+			<label>A/67/251: 93 - Role of science and technology in the context of international security anddisarmament</label>
+		</item>
+		<item id="A6725194">
+			<label>A/67/251: 94 - General and complete disarmament</label>
+		</item>
+		<item id="A6725194a">
+			<label>A/67/251: 94a - Notification of nuclear tests</label>
+		</item>
+		<item id="A6725194b">
+			<label>A/67/251: 94b - Towards an arms trade treaty: establishing common internationalstandards for the import, export and transfer of conventional arms</label>
+		</item>
+		<item id="A6725194c">
+			<label>A/67/251: 94c - Treaty on a Nuclear-Weapon-Free Zone in Central Asia</label>
+		</item>
+		<item id="A6725194d">
+			<label>A/67/251: 94d - Measures to uphold the authority of the 1925 Geneva Protocol</label>
+		</item>
+		<item id="A6725194e">
+			<label>A/67/251: 94e - Effects of the use of armaments and ammunitions containing depleteduranium</label>
+		</item>
+		<item id="A6725194f">
+			<label>A/67/251: 94f - Nuclear-weapon-free southern hemisphere and adjacent areas</label>
+		</item>
+		<item id="A6725194g">
+			<label>A/67/251: 94g - Information on confidence-building measures in the field of conventionalarms</label>
+		</item>
+		<item id="A6725194h">
+			<label>A/67/251: 94h - Convening of the fourth special session of the General Assembly devotedto disarmament</label>
+		</item>
+		<item id="A6725194i">
+			<label>A/67/251: 94i - Consolidation of peace through practical disarmament measures</label>
+		</item>
+		<item id="A6725194j">
+			<label>A/67/251: 94j - Women, disarmament, non-proliferation and arms control</label>
+		</item>
+		<item id="A6725194k">
+			<label>A/67/251: 94k - Mongolia's international security and nuclear-weapon-free status</label>
+		</item>
+		<item id="A6725194l">
+			<label>A/67/251: 94l - The Hague Code of Conduct against Ballistic Missile Proliferation</label>
+		</item>
+		<item id="A6725194m">
+			<label>A/67/251: 94m - Preventing the acquisition by terrorists of radioactive sources</label>
+		</item>
+		<item id="A6725194n">
+			<label>A/67/251: 94n - Preventing and combating illicit brokering activities</label>
+		</item>
+		<item id="A6725194o">
+			<label>A/67/251: 94o - Disarmament and non-proliferation education</label>
+		</item>
+		<item id="A6725194p">
+			<label>A/67/251: 94p - Relationship between disarmament and development</label>
+		</item>
+		<item id="A6725194q">
+			<label>A/67/251: 94q - Observance of environmental norms in the drafting and implementation of agreements on disarmament and arms control</label>
+		</item>
+		<item id="A6725194r">
+			<label>A/67/251: 94r - Promotion of multilateralism in the area of disarmament andnon-proliferation</label>
+		</item>
+		<item id="A6725194s">
+			<label>A/67/251: 94s - Assistance to States for curbing the illicit traffic in small arms and lightweapons and collecting them</label>
+		</item>
+		<item id="A6725194t">
+			<label>A/67/251: 94t - Implementation of the Convention on the Prohibition of the Development, Production, Stockpiling and Use of Chemical Weapons and on Their Destruction</label>
+		</item>
+		<item id="A6725194u">
+			<label>A/67/251: 94u - Regional disarmament</label>
+		</item>
+		<item id="A6725194v">
+			<label>A/67/251: 94v - Conventional arms control at the regional and subregional levels</label>
+		</item>
+		<item id="A6725194w">
+			<label>A/67/251: 94w - Confidence-building measures in the regional and subregional context</label>
+		</item>
+		<item id="A6725194x">
+			<label>A/67/251: 94x - Towards a nuclear-weapon-free world: accelerating the implementation of nuclear disarmament commitments</label>
+		</item>
+		<item id="A6725194y">
+			<label>A/67/251: 94y - Treaty banning the production of fissile material for nuclear weapons or other nuclear explosive devices</label>
+		</item>
+		<item id="A6725194z">
+			<label>A/67/251: 94z - United action towards the total elimination of nuclear weapons</label>
+		</item>
+		<item id="A6725194aa">
+			<label>A/67/251: 94aa - Follow-up to the advisory opinion of the International Court of Justice on the Legality of the Threat or Use of Nuclear Weapons</label>
+		</item>
+		<item id="A6725194bb">
+			<label>A/67/251: 94bb - The illicit trade in small arms and light weapons in all its aspects</label>
+		</item>
+		<item id="A6725194cc">
+			<label>A/67/251: 94cc - Reducing nuclear danger</label>
+		</item>
+		<item id="A6725194dd">
+			<label>A/67/251: 94dd - Measures to prevent terrorists from acquiring weapons of massdestruction</label>
+		</item>
+		<item id="A6725194ee">
+			<label>A/67/251: 94ee - Nuclear disarmament</label>
+		</item>
+		<item id="A6725194ff">
+			<label>A/67/251: 94ff - Missiles</label>
+		</item>
+		<item id="A6725195">
+			<label>A/67/251: 95 - Review and implementation of the Concluding Document of the Twelfth Special Session of the General Assembly</label>
+		</item>
+		<item id="A6725195a">
+			<label>A/67/251: 95a - United Nations Disarmament Information Programme</label>
+		</item>
+		<item id="A6725195b">
+			<label>A/67/251: 95b - United Nations disarmament fellowship, training and advisory services</label>
+		</item>
+		<item id="A6725195c">
+			<label>A/67/251: 95c - United Nations regional centres for peace and disarmament</label>
+		</item>
+		<item id="A6725195d">
+			<label>A/67/251: 95d - United Nations Regional Centre for Peace, Disarmament and Development in Latin America and the Caribbean</label>
+		</item>
+		<item id="A6725195e">
+			<label>A/67/251: 95e - Regional confidence-building measures: activities of the United Nations Standing Advisory Committee on Security Questions in Central Africa</label>
+		</item>
+		<item id="A6725195f">
+			<label>A/67/251: 95f - United Nations Regional Centre for Peace and Disarmament in Asia and the Pacific</label>
+		</item>
+		<item id="A6725195g">
+			<label>A/67/251: 95g - Convention on the Prohibition of the Use of Nuclear Weapons</label>
+		</item>
+		<item id="A6725195h">
+			<label>A/67/251: 95h - United Nations Regional Centre for Peace and Disarmament in Africa</label>
+		</item>
+		<item id="A6725196">
+			<label>A/67/251: 96 - Review of the implementation of the recommendations and decisions adoptedby the General Assembly at its tenth special session</label>
+		</item>
+		<item id="A6725196a">
+			<label>A/67/251: 96a - Report of the Conference on Disarmament</label>
+		</item>
+		<item id="A6725196b">
+			<label>A/67/251: 96b - Report of the Disarmament Commission</label>
+		</item>
+		<item id="A6725197">
+			<label>A/67/251: 97 - The risk of nuclear proliferation in the Middle East</label>
+		</item>
+		<item id="A6725198">
+			<label>A/67/251: 98 - Convention on Prohibitions or Restrictions on the Use of Certain Conventional Weapons Which May Be Deemed to Be Excessively Injurious or to Have Indiscriminate Effects</label>
+		</item>
+		<item id="A6725199">
+			<label>A/67/251: 99 - Strengthening of security and cooperation in the Mediterranean region</label>
+		</item>
+		<item id="A67251100">
+			<label>A/67/251: 100 - Comprehensive Nuclear-Test-Ban Treaty</label>
+		</item>
+		<item id="A67251101">
+			<label>A/67/251: 101 - Convention on the Prohibition of the Development, Production and Stockpiling of Bacteriological (Biological) and Toxin Weapons and on Their Destruction</label>
+		</item>
+		<item id="A67251102">
+			<label>A/67/251: 102 - Revitalizing the work of the Conference on Disarmament and taking forwardmultilateral disarmament negotiations</label>
+		</item>
+		<item id="A67251103">
+			<label>A/67/251: 103 - Crime prevention and criminal justice</label>
+		</item>
+		<item id="A67251104">
+			<label>A/67/251: 104 - International drug control</label>
+		</item>
+		<item id="A67251105">
+			<label>A/67/251: 105 - Measures to eliminate international terrorism</label>
+		</item>
+		<item id="A67251106">
+			<label>A/67/251: 106 - Report of the Secretary-General on the work of the Organization</label>
+		</item>
+		<item id="A67251107">
+			<label>A/67/251: 107 - Report of the Secretary-General on the Peacebuilding Fund</label>
+		</item>
+		<item id="A67251108">
+			<label>A/67/251: 108 - Notification by the Secretary-General under Article 12, paragraph 2, of the Charter of the United Nations</label>
+		</item>
+		<item id="A67251109">
+			<label>A/67/251: 109 - Elections to fill vacancies in principal organs</label>
+		</item>
+		<item id="A67251109a">
+			<label>A/67/251: 109a - Election of five non-permanent members of the Security Council</label>
+		</item>
+		<item id="A67251109b">
+			<label>A/67/251: 109b - Election of eighteen members of the Economic and Social Council</label>
+		</item>
+		<item id="A67251110">
+			<label>A/67/251: 110 - Elections to fill vacancies in subsidiary organs and other elections</label>
+		</item>
+		<item id="A67251110a">
+			<label>A/67/251: 110a - Election of seven members of the Committee for Programme and Coordination</label>
+		</item>
+		<item id="A67251110b">
+			<label>A/67/251: 110b - Election of thirty members of the United Nations Commission on International Trade Law</label>
+		</item>
+		<item id="A67251110c">
+			<label>A/67/251: 110c - Election of five members of the Organizational Committee of the Peacebuilding Commission</label>
+		</item>
+		<item id="A67251110d">
+			<label>A/67/251: 110d - Election of eighteen members of the Human Rights Council</label>
+		</item>
+		<item id="A67251111">
+			<label>A/67/251: 111 - Appointments to fill vacancies in subsidiary organs and other appointments</label>
+		</item>
+		<item id="A67251111a">
+			<label>A/67/251: 111a - Appointment of members of the Advisory Committee on Administrative and Budgetary Questions</label>
+		</item>
+		<item id="A67251111b">
+			<label>A/67/251: 111b - Appointment of members of the Committee on Contributions</label>
+		</item>
+		<item id="A67251111c">
+			<label>A/67/251: 111c - Confirmation of the appointment of members of the Investments Committee</label>
+		</item>
+		<item id="A67251111d">
+			<label>A/67/251: 111d - Appointment of members of the International Civil Service Commission</label>
+		</item>
+		<item id="A67251111e">
+			<label>A/67/251: 111e - Appointment of members and alternate members of the United Nations Staff Pension Committee</label>
+		</item>
+		<item id="A67251111f">
+			<label>A/67/251: 111f - Appointment of members of the Committee on Conferences</label>
+		</item>
+		<item id="A67251111g">
+			<label>A/67/251: 111g - Confirmation of the appointment of the Administrator of the United Nations Development Programme</label>
+		</item>
+		<item id="A67251111h">
+			<label>A/67/251: 111h - Confirmation of the appointment of the Secretary-General of the United Nations Conference on Trade and Development</label>
+		</item>
+		<item id="A67251112">
+			<label>A/67/251: 112 - Admission of new Members to the United Nations</label>
+		</item>
+		<item id="A67251113">
+			<label>A/67/251: 113 - Follow-up to the outcome of the Millennium Summit</label>
+		</item>
+		<item id="A67251114">
+			<label>A/67/251: 114 - Follow-up to the commemoration of the two-hundredth anniversary of the abolition of the transatlantic slave trade</label>
+		</item>
+		<item id="A67251115">
+			<label>A/67/251: 115 - Implementation of the resolutions of the United Nations</label>
+		</item>
+		<item id="A67251116">
+			<label>A/67/251: 116 - Revitalization of the work of the General Assembly</label>
+		</item>
+		<item id="A67251117">
+			<label>A/67/251: 117 - Question of equitable representation on and increase in the membership of the Security Council and related matters</label>
+		</item>
+		<item id="A67251118">
+			<label>A/67/251: 118 - Strengthening of the United Nations system</label>
+		</item>
+		<item id="A67251118a">
+			<label>A/67/251: 118a - Strengthening of the United Nations system</label>
+		</item>
+		<item id="A67251118b">
+			<label>A/67/251: 118b - Central role of the United Nations system in global governance</label>
+		</item>
+		<item id="A67251119">
+			<label>A/67/251: 119 - United Nations reform: measures and proposals</label>
+		</item>
+		<item id="A67251120">
+			<label>A/67/251: 120 - Multilingualism</label>
+		</item>
+		<item id="A67251121">
+			<label>A/67/251: 121 - Cooperation between the United Nations and regional and other organizations</label>
+		</item>
+		<item id="A67251121a">
+			<label>A/67/251: 121a - Cooperation between the United Nations and the African Union</label>
+		</item>
+		<item id="A67251121b">
+			<label>A/67/251: 121b - Cooperation between the United Nations and the Asian-African Legal Consultative Organization</label>
+		</item>
+		<item id="A67251121c">
+			<label>A/67/251: 121c - Cooperation between the United Nations and the Association of Southeast Asian Nations</label>
+		</item>
+		<item id="A67251121d">
+			<label>A/67/251: 121d - Cooperation between the United Nations and the Black Sea Economic Cooperation Organization</label>
+		</item>
+		<item id="A67251121e">
+			<label>A/67/251: 121e - Cooperation between the United Nations and the Caribbean Community</label>
+		</item>
+		<item id="A67251121f">
+			<label>A/67/251: 121f - Cooperation between the United Nations and the Collective Security Treaty Organization</label>
+		</item>
+		<item id="A67251121g">
+			<label>A/67/251: 121g - Cooperation between the United Nations and the Community of Portuguese-speaking Countries</label>
+		</item>
+		<item id="A67251121h">
+			<label>A/67/251: 121h - Cooperation between the United Nations and the Council of Europe</label>
+		</item>
+		<item id="A67251121i">
+			<label>A/67/251: 121i - Cooperation between the United Nations and the Economic Community of Central African States</label>
+		</item>
+		<item id="A67251121j">
+			<label>A/67/251: 121j - Cooperation between the United Nations and the Economic Cooperation Organization</label>
+		</item>
+		<item id="A67251121k">
+			<label>A/67/251: 121k - Cooperation between the United Nations and the Eurasian Economic Community</label>
+		</item>
+		<item id="A67251121l">
+			<label>A/67/251: 121l - Cooperation between the United Nations and the International Organization of la Francophonie</label>
+		</item>
+		<item id="A67251121m">
+			<label>A/67/251: 121m - Cooperation between the United Nations and the Latin American Economic System</label>
+		</item>
+		<item id="A67251121n">
+			<label>A/67/251: 121n - Cooperation between the United Nations and the League of Arab States</label>
+		</item>
+		<item id="A67251121o">
+			<label>A/67/251: 121o - Cooperation between the United Nations and the Organization for the Prohibition of Chemical Weapons</label>
+		</item>
+		<item id="A67251121p">
+			<label>A/67/251: 121p - Cooperation between the United Nations and the Organization for Security and Cooperation in Europe</label>
+		</item>
+		<item id="A67251121q">
+			<label>A/67/251: 121q - Cooperation between the United Nations and the Organization of American States</label>
+		</item>
+		<item id="A67251121r">
+			<label>A/67/251: 121r - Cooperation between the United Nations and the Organization of Islamic Cooperation</label>
+		</item>
+		<item id="A67251121s">
+			<label>A/67/251: 121s - Cooperation between the United Nations and the Pacific Islands Forum</label>
+		</item>
+		<item id="A67251121t">
+			<label>A/67/251: 121t - Cooperation between the United Nations and the Preparatory Commission for the Comprehensive Nuclear-Test-Ban Treaty Organization</label>
+		</item>
+		<item id="A67251121u">
+			<label>A/67/251: 121u - Cooperation between the United Nations and the Shanghai Cooperation Organization</label>
+		</item>
+		<item id="A67251121v">
+			<label>A/67/251: 121v - Cooperation between the United Nations and the Southern African Development Community</label>
+		</item>
+		<item id="A67251121w">
+			<label>A/67/251: 121w - Cooperation between the United Nations and the Central European Initiative</label>
+		</item>
+		<item id="A67251122">
+			<label>A/67/251: 122 - Follow-up to the recommendations on administrative management and internaloversight of the Independent Inquiry Committee into the United Nations Oilfor-Food Programme</label>
+		</item>
+		<item id="A67251123">
+			<label>A/67/251: 123 - Global health and foreign policy</label>
+		</item>
+		<item id="A67251124">
+			<label>A/67/251: 124 - International Criminal Tribunal for the Prosecution of Persons Responsible for Genocide and Other Serious Violations of International Humanitarian Law Committed in the Territory of Rwanda and Rwandan Citizens Responsible for Genocide and Other Such Violations Committed in the Territory of Neighbouring States between 1 January and 31 December 1994</label>
+		</item>
+		<item id="A67251125">
+			<label>A/67/251: 125 - International Tribunal for the Prosecution of Persons Responsible for Serious Violations of International Humanitarian Law Committed in the Territory of the Former Yugoslavia since 1991</label>
+		</item>
+		<item id="A67251126">
+			<label>A/67/251: 126 - International residual mechanism for criminal tribunals</label>
+		</item>
+		<item id="A67251127">
+			<label>A/67/251: 127 - Addressing the socioeconomic needs of individuals, families and societiesaffected by autism spectrum disorders and other developmental disorders</label>
+		</item>
+		<item id="A67251128">
+			<label>A/67/251: 128 - Financial reports and audited financial statements, and reports of the Board of Auditors</label>
+		</item>
+		<item id="A67251128a">
+			<label>A/67/251: 128a - United Nations</label>
+		</item>
+		<item id="A67251128b">
+			<label>A/67/251: 128b - United Nations peacekeeping operations</label>
+		</item>
+		<item id="A67251128c">
+			<label>A/67/251: 128c - International Trade Centre</label>
+		</item>
+		<item id="A67251128d">
+			<label>A/67/251: 128d - United Nations University</label>
+		</item>
+		<item id="A67251128e">
+			<label>A/67/251: 128e - Capital master plan</label>
+		</item>
+		<item id="A67251128f">
+			<label>A/67/251: 128f - United Nations Development Programme</label>
+		</item>
+		<item id="A67251128g">
+			<label>A/67/251: 128g - United Nations Children's Fund</label>
+		</item>
+		<item id="A67251128h">
+			<label>A/67/251: 128h - United Nations Relief and Works Agency for Palestine Refugees in the Near East</label>
+		</item>
+		<item id="A67251128i">
+			<label>A/67/251: 128i - United Nations Institute for Training and Research</label>
+		</item>
+		<item id="A67251128j">
+			<label>A/67/251: 128j - Voluntary funds administered by the United Nations High Commissionerfor Refugees</label>
+		</item>
+		<item id="A67251128k">
+			<label>A/67/251: 128k - Fund of the United Nations Environment Programme</label>
+		</item>
+		<item id="A67251128l">
+			<label>A/67/251: 128l - United Nations Population Fund</label>
+		</item>
+		<item id="A67251128m">
+			<label>A/67/251: 128m - United Nations Human Settlements Programme</label>
+		</item>
+		<item id="A67251128n">
+			<label>A/67/251: 128n - United Nations Office on Drugs and Crime</label>
+		</item>
+		<item id="A67251128o">
+			<label>A/67/251: 128o - United Nations Office for Project Services</label>
+		</item>
+		<item id="A67251128p">
+			<label>A/67/251: 128p - International Criminal Tribunal for the Prosecution of Persons Responsible for Genocide and Other Serious Violations of International Humanitarian Law Committed in the Territory of Rwanda and Rwandan Citizens Responsible for Genocide and Other Such Violations Committed in the Territory of Neighbouring States between 1 January and 31 December 1994</label>
+		</item>
+		<item id="A67251128q">
+			<label>A/67/251: 128q - International Tribunal for the Prosecution of Persons Responsible for Serious Violations of International Humanitarian Law Committed in the Territory of the Former Yugoslavia since 1991</label>
+		</item>
+		<item id="A67251128r">
+			<label>A/67/251: 128r - United Nations Entity for Gender Equality and the Empowerment of Women (UN-Women)</label>
+		</item>
+		<item id="A67251129">
+			<label>A/67/251: 129 - Review of the efficiency of the administrative and financial functioning of the United Nations</label>
+		</item>
+		<item id="A67251130">
+			<label>A/67/251: 130 - Programme budget for the biennium 2012-2013</label>
+		</item>
+		<item id="A67251131">
+			<label>A/67/251: 131 - Programme planning</label>
+		</item>
+		<item id="A67251132">
+			<label>A/67/251: 132 - Improving the financial situation of the United Nations</label>
+		</item>
+		<item id="A67251133">
+			<label>A/67/251: 133 - Pattern of conferences</label>
+		</item>
+		<item id="A67251134">
+			<label>A/67/251: 134 - Scale of assessments for the apportionment of the expenses of the United Nations</label>
+		</item>
+		<item id="A67251135">
+			<label>A/67/251: 135 - Human resources management</label>
+		</item>
+		<item id="A67251136">
+			<label>A/67/251: 136 - Joint Inspection Unit</label>
+		</item>
+		<item id="A67251137">
+			<label>A/67/251: 137 - United Nations common system</label>
+		</item>
+		<item id="A67251138">
+			<label>A/67/251: 138 - United Nations pension system</label>
+		</item>
+		<item id="A67251139">
+			<label>A/67/251: 139 - Administrative and budgetary coordination of the United Nations with thespecialized agencies and the International Atomic Energy Agency</label>
+		</item>
+		<item id="A67251140">
+			<label>A/67/251: 140 - Report on the activities of the Office of Internal Oversight Services</label>
+		</item>
+		<item id="A67251141">
+			<label>A/67/251: 141 - Administration of justice at the United Nations</label>
+		</item>
+		<item id="A67251142">
+			<label>A/67/251: 142 - Financing of the International Criminal Tribunal for the Prosecution of Persons Responsible for Genocide and Other Serious Violations of International Humanitarian Law Committed in the Territory of Rwanda and Rwandan Citizens Responsible for Genocide and Other Such Violations Committed in the Territory of Neighbouring States between 1 January and 31 December 1994</label>
+		</item>
+		<item id="A67251143">
+			<label>A/67/251: 143 - Financing of the International Tribunal for the Prosecution of Persons Responsible for Serious Violations of International Humanitarian Law Committed in the Territory of the Former Yugoslavia since 1991</label>
+		</item>
+		<item id="A67251144">
+			<label>A/67/251: 144 - Financing of the International Residual Mechanism for Criminal Tribunals</label>
+		</item>
+		<item id="A67251145">
+			<label>A/67/251: 145 - Scale of assessments for the apportionment of the expenses of the United Nations peacekeeping operations</label>
+		</item>
+		<item id="A67251146">
+			<label>A/67/251: 146 - Administrative and budgetary aspects of the financing of the United Nationspeacekeeping operations</label>
+		</item>
+		<item id="A67251147">
+			<label>A/67/251: 147 - Financing of the United Nations Interim Security Force for Abyei</label>
+		</item>
+		<item id="A67251148">
+			<label>A/67/251: 148 - Financing of the United Nations Mission in the Central African Republic and Chad</label>
+		</item>
+		<item id="A67251149">
+			<label>A/67/251: 149 - Financing of the United Nations Operation in C&ograve;te d'Ivoire</label>
+		</item>
+		<item id="A67251150">
+			<label>A/67/251: 150 - Financing of the United Nations Peacekeeping Force in Cyprus</label>
+		</item>
+		<item id="A67251151">
+			<label>A/67/251: 151 - Financing of the United Nations Organization Stabilization Mission in the Democratic Republic of the Congo</label>
+		</item>
+		<item id="A67251152">
+			<label>A/67/251: 152 - Financing of the United Nations Mission in East Timor</label>
+		</item>
+		<item id="A67251153">
+			<label>A/67/251: 153 - Financing of the United Nations Integrated Mission in Timor-Leste</label>
+		</item>
+		<item id="A67251154">
+			<label>A/67/251: 154 - Financing of the United Nations Observer Mission in Georgia</label>
+		</item>
+		<item id="A67251155">
+			<label>A/67/251: 155 - Financing of the United Nations Stabilization Mission in Haiti</label>
+		</item>
+		<item id="A67251156">
+			<label>A/67/251: 156 - Financing of the United Nations Interim Administration Mission in Kosovo</label>
+		</item>
+		<item id="A67251157">
+			<label>A/67/251: 157 - Financing of the United Nations Mission in Liberia</label>
+		</item>
+		<item id="A67251158">
+			<label>A/67/251: 158 - Financing of the United Nations peacekeeping forces in the Middle East</label>
+		</item>
+		<item id="A67251158a">
+			<label>A/67/251: 158a - United Nations Disengagement Observer Force</label>
+		</item>
+		<item id="A67251158b">
+			<label>A/67/251: 158b - United Nations Interim Force in Lebanon</label>
+		</item>
+		<item id="A67251159">
+			<label>A/67/251: 159 - Financing of the United Nations Mission in South Sudan</label>
+		</item>
+		<item id="A67251160">
+			<label>A/67/251: 160 - Financing of the United Nations Mission in the Sudan</label>
+		</item>
+		<item id="A67251161">
+			<label>A/67/251: 161 - Financing of the United Nations Supervision Mission in the Syrian Arab Republic</label>
+		</item>
+		<item id="A67251162">
+			<label>A/67/251: 162 - Financing of the United Nations Mission for the Referendum in Western Sahara</label>
+		</item>
+		<item id="A67251163">
+			<label>A/67/251: 163 - Financing of the African Union-United Nations Hybrid Operation in Darfur</label>
+		</item>
+		<item id="A67251164">
+			<label>A/67/251: 164 - Financing of the activities arising from Security Council resolution 1863(2009)</label>
+		</item>
+		<item id="A67251165">
+			<label>A/67/251: 165 - Report of the Committee on Relations with the Host Country</label>
+		</item>
+		<item id="A67251166">
+			<label>A/67/251: 166 - Observer status for the Cooperation Council of Turkic-speaking States in the General Assembly</label>
+		</item>
+		<item id="A67251167">
+			<label>A/67/251: 167 - Observer status for the International Conference of Asian Political Parties in the General Assembly</label>
+		</item>
+		<item id="A67251168">
+			<label>A/67/251: 168 - Observer status for the Andean Development Corporation in the General Assembly</label>
+		</item>
+		<item id="A67251169">
+			<label>A/67/251: 169 - Observer status for the International Chamber of Commerce in the General Assembly</label>
+		</item>
+		<item id="A67251170">
+			<label>A/67/251: 170 - Observer status for the European Organization for Nuclear Research in the General Assembly</label>
+		</item>
+		<item id="A67251171">
+			<label>A/67/251: 171 - Financing of the United Nations Multidimensional Integrated Stabilization Mission in Mali</label>
+		</item>
+	</agenda>
+	<agenda id="A68251">
+		<item id="A682511">
+			<label>A/68/251: 1 - Opening of the session by the President of the General Assembly</label>
+		</item>
+		<item id="A682512">
+			<label>A/68/251: 2 - Minute of silent prayer or meditation</label>
+		</item>
+		<item id="A682513">
+			<label>A/68/251: 3 - Credentials of representatives to the sixty-eighth session of the General Assembly</label>
+		</item>
+		<item id="A682513a">
+			<label>A/68/251: 3a - Appointment of the members of the Credentials Committee</label>
+		</item>
+		<item id="A682513b">
+			<label>A/68/251: 3b - Report of the Credentials Committee</label>
+		</item>
+		<item id="A682514">
+			<label>A/68/251: 4 - Election of the President of the General Assembly</label>
+		</item>
+		<item id="A682515">
+			<label>A/68/251: 5 - Election of the officers of the Main Committees</label>
+		</item>
+		<item id="A682516">
+			<label>A/68/251: 6 - Election of the Vice-Presidents of the General Assembly</label>
+		</item>
+		<item id="A682517">
+			<label>A/68/251: 7 - Organization of work, adoption of the agenda and allocation of items: reports of the General Committee</label>
+		</item>
+		<item id="A682518">
+			<label>A/68/251: 8 - General debate</label>
+		</item>
+		<item id="A682519">
+			<label>A/68/251: 9 - Report of the Economic and Social Council</label>
+		</item>
+		<item id="A6825110">
+			<label>A/68/251: 10 - Implementation of the Declaration of Commitment on HIV/AIDS and the Political Declarations on HIV/AIDS</label>
+		</item>
+		<item id="A6825111">
+			<label>A/68/251: 11 - Sport for peace and development: building a peaceful and better world through sport and the Olympic ideal</label>
+		</item>
+		<item id="A6825112">
+			<label>A/68/251: 12 - Global road safety crisis</label>
+		</item>
+		<item id="A6825113">
+			<label>A/68/251: 13 - 2001-2010: Decade to Roll Back Malaria in Developing Countries, Particularly in Africa</label>
+		</item>
+		<item id="A6825114">
+			<label>A/68/251: 14 - Integrated and coordinated implementation of and follow-up to the outcomes of the major United Nations conferences and summits in the economic, social and related fields</label>
+		</item>
+		<item id="A6825115">
+			<label>A/68/251: 15 - Culture of peace</label>
+		</item>
+		<item id="A6825116">
+			<label>A/68/251: 16 - Information and communications technologies for development</label>
+		</item>
+		<item id="A6825117">
+			<label>A/68/251: 17 - Macroeconomic policy questions</label>
+		</item>
+		<item id="A6825117a">
+			<label>A/68/251: 17a - International trade and development</label>
+		</item>
+		<item id="A6825117b">
+			<label>A/68/251: 17b - International financial system and development</label>
+		</item>
+		<item id="A6825117c">
+			<label>A/68/251: 17c - External debt sustainability and development</label>
+		</item>
+		<item id="A6825117d">
+			<label>A/68/251: 17d - Commodities</label>
+		</item>
+		<item id="A6825118">
+			<label>A/68/251: 18 - Follow-up to and implementation of the outcome of the 2002 International Conference on Financing for Development and the 2008 Review Conference</label>
+		</item>
+		<item id="A6825119">
+			<label>A/68/251: 19 - Sustainable development</label>
+		</item>
+		<item id="A6825119a">
+			<label>A/68/251: 19a - Implementation of Agenda 21, the Programme for the Further Implementation of Agenda 21 and the outcomes of the World Summit on Sustainable Development and of the United Nations Conference on Sustainable Development</label>
+		</item>
+		<item id="A6825119b">
+			<label>A/68/251: 19b - Follow-up to and implementation of the Mauritius Strategy for the Further Implementation of the Programme of Action for the Sustainable Development of Small Island Developing States</label>
+		</item>
+		<item id="A6825119c">
+			<label>A/68/251: 19c - International Strategy for Disaster Reduction</label>
+		</item>
+		<item id="A6825119d">
+			<label>A/68/251: 19d - Protection of global climate for present and future generations of humankind</label>
+		</item>
+		<item id="A6825119e">
+			<label>A/68/251: 19e - Implementation of the United Nations Convention to Combat Desertification in Those Countries Experiencing Serious Drought and/or Desertification, Particularly in Africa</label>
+		</item>
+		<item id="A6825119f">
+			<label>A/68/251: 19f - Convention on Biological Diversity</label>
+		</item>
+		<item id="A6825119g">
+			<label>A/68/251: 19g - Report of the Governing Council of the United Nations Environment Programme on its first universal session</label>
+		</item>
+		<item id="A6825119h">
+			<label>A/68/251: 19h - Harmony with Nature</label>
+		</item>
+		<item id="A6825119i">
+			<label>A/68/251: 19i - Sustainable mountain development</label>
+		</item>
+		<item id="A6825119j">
+			<label>A/68/251: 19j - The role of the international community in the prevention of the radiation threat in Central Asia</label>
+		</item>
+		<item id="A6825120">
+			<label>A/68/251: 20 - Implementation of the outcome of the United Nations Conference on Human Settlements (Habitat II) and strengthening of the United Nations Human Settlements Programme (UN-Habitat)</label>
+		</item>
+		<item id="A6825121">
+			<label>A/68/251: 21 - Globalization and interdependence</label>
+		</item>
+		<item id="A6825121a">
+			<label>A/68/251: 21a - Role of the United Nations in promoting development in the context of globalization and interdependence</label>
+		</item>
+		<item id="A6825121b">
+			<label>A/68/251: 21b - Science and technology for development</label>
+		</item>
+		<item id="A6825121c">
+			<label>A/68/251: 21c - Development cooperation with middle-income countries</label>
+		</item>
+		<item id="A6825121d">
+			<label>A/68/251: 21d - Culture and development</label>
+		</item>
+		<item id="A6825121e">
+			<label>A/68/251: 21e - International migration and development</label>
+		</item>
+		<item id="A6825122">
+			<label>A/68/251: 22 - Groups of countries in special situations</label>
+		</item>
+		<item id="A6825122a">
+			<label>A/68/251: 22a - Follow-up to the Fourth United Nations Conference on the Least Developed Countries</label>
+		</item>
+		<item id="A6825122b">
+			<label>A/68/251: 22b - Comprehensive 10-year Review Conference on the Implementation of the Almaty Programme of Action</label>
+		</item>
+		<item id="A6825123">
+			<label>A/68/251: 23 - Eradication of poverty and other development issues</label>
+		</item>
+		<item id="A6825123a">
+			<label>A/68/251: 23a - Implementation of the Second United Nations Decade for the Eradication of Poverty (2008-2017)</label>
+		</item>
+		<item id="A6825123b">
+			<label>A/68/251: 23b - Women in development</label>
+		</item>
+		<item id="A6825123c">
+			<label>A/68/251: 23c - Human resources development</label>
+		</item>
+		<item id="A6825124">
+			<label>A/68/251: 24 - Operational activities for development</label>
+		</item>
+		<item id="A6825124a">
+			<label>A/68/251: 24a - Operational activities for development of the United Nations system</label>
+		</item>
+		<item id="A6825124b">
+			<label>A/68/251: 24b - South-South cooperation</label>
+		</item>
+		<item id="A6825125">
+			<label>A/68/251: 25 - Agriculture development, food security and nutrition</label>
+		</item>
+		<item id="A6825126">
+			<label>A/68/251: 26 - Towards global partnerships</label>
+		</item>
+		<item id="A6825127">
+			<label>A/68/251: 27 - Social development</label>
+		</item>
+		<item id="A6825127a">
+			<label>A/68/251: 27a - Implementation of the outcome of the World Summit for Social Development and of the twenty-fourth special session of the General Assembly</label>
+		</item>
+		<item id="A6825127b">
+			<label>A/68/251: 27b - Social development, including questions relating to the world social situation and to youth, ageing, disabled persons and the family</label>
+		</item>
+		<item id="A6825127c">
+			<label>A/68/251: 27c - Follow-up to the International Year of Older Persons: Second World Assembly on Ageing</label>
+		</item>
+		<item id="A6825127d">
+			<label>A/68/251: 27d - United Nations Literacy Decade: education for all</label>
+		</item>
+		<item id="A6825128">
+			<label>A/68/251: 28 - Advancement of women</label>
+		</item>
+		<item id="A6825128a">
+			<label>A/68/251: 28a - Advancement of women</label>
+		</item>
+		<item id="A6825128b">
+			<label>A/68/251: 28b - Implementation of the outcome of the Fourth World Conference on Women and of the twenty-third special session of the General Assembly</label>
+		</item>
+		<item id="A6825129">
+			<label>A/68/251: 29 - Report of the Security Council</label>
+		</item>
+		<item id="A6825130">
+			<label>A/68/251: 30 - Report of the Peacebuilding Commission</label>
+		</item>
+		<item id="A6825131">
+			<label>A/68/251: 31 - Support by the United Nations system of the efforts of Governments to promote and consolidate new or restored democracies</label>
+		</item>
+		<item id="A6825132">
+			<label>A/68/251: 32 - The role of diamonds in fuelling conflict</label>
+		</item>
+		<item id="A6825133">
+			<label>A/68/251: 33 - Prevention of armed conflict</label>
+		</item>
+		<item id="A6825133a">
+			<label>A/68/251: 33a - Prevention of armed conflict</label>
+		</item>
+		<item id="A6825133b">
+			<label>A/68/251: 33b - Strengthening the role of mediation in the peaceful settlement of disputes, conflict prevention and resolution</label>
+		</item>
+		<item id="A6825134">
+			<label>A/68/251: 34 - Protracted conflicts in the GUAM area and their implications for international peace, security and development</label>
+		</item>
+		<item id="A6825135">
+			<label>A/68/251: 35 - The situation in the Middle East</label>
+		</item>
+		<item id="A6825136">
+			<label>A/68/251: 36 - Question of Palestine</label>
+		</item>
+		<item id="A6825137">
+			<label>A/68/251: 37 - The situation in Afghanistan</label>
+		</item>
+		<item id="A6825138">
+			<label>A/68/251: 38 - The situation in the occupied territories of Azerbaijan</label>
+		</item>
+		<item id="A6825139">
+			<label>A/68/251: 39 - Question of the Comorian island of Mayotte</label>
+		</item>
+		<item id="A6825140">
+			<label>A/68/251: 40 - Necessity of ending the economic, commercial and financial embargo imposed by the United States of America against Cuba</label>
+		</item>
+		<item id="A6825141">
+			<label>A/68/251: 41 - The situation in Central America: progress in fashioning a region of peace, freedom, democracy and development</label>
+		</item>
+		<item id="A6825142">
+			<label>A/68/251: 42 - Question of Cyprus</label>
+		</item>
+		<item id="A6825143">
+			<label>A/68/251: 43 - Armed aggression against the Democratic Republic of the Congo</label>
+		</item>
+		<item id="A6825144">
+			<label>A/68/251: 44 - Question of the Falkland Islands (Malvinas)</label>
+		</item>
+		<item id="A6825145">
+			<label>A/68/251: 45 - The situation of democracy and human rights in Haiti</label>
+		</item>
+		<item id="A6825146">
+			<label>A/68/251: 46 - Armed Israeli aggression against the Iraqi nuclear installations and its grave consequences for the established international system concerning the peaceful uses of nuclear energy, the non-proliferation of nuclear weapons and international peace and security</label>
+		</item>
+		<item id="A6825147">
+			<label>A/68/251: 47 - Consequences of the Iraqi occupation of and aggression against Kuwait</label>
+		</item>
+		<item id="A6825148">
+			<label>A/68/251: 48 - Assistance in mine action</label>
+		</item>
+		<item id="A6825149">
+			<label>A/68/251: 49 - Effects of atomic radiation</label>
+		</item>
+		<item id="A6825150">
+			<label>A/68/251: 50 - International cooperation in the peaceful uses of outer space</label>
+		</item>
+		<item id="A6825151">
+			<label>A/68/251: 51 - United Nations Relief and Works Agency for Palestine Refugees in the Near East</label>
+		</item>
+		<item id="A6825152">
+			<label>A/68/251: 52 - Report of the Special Committee to Investigate Israeli Practices Affecting the Human Rights of the Palestinian People and Other Arabs of the Occupied Territories</label>
+		</item>
+		<item id="A6825153">
+			<label>A/68/251: 53 - Comprehensive review of the whole question of peacekeeping operations in all their aspects</label>
+		</item>
+		<item id="A6825154">
+			<label>A/68/251: 54 - Comprehensive review of special political missions</label>
+		</item>
+		<item id="A6825155">
+			<label>A/68/251: 55 - Questions relating to information</label>
+		</item>
+		<item id="A6825156">
+			<label>A/68/251: 56 - Information from Non-Self-Governing Territories transmitted under Article 73 e of the Charter of the United Nations</label>
+		</item>
+		<item id="A6825157">
+			<label>A/68/251: 57 - Economic and other activities which affect the interests of the peoples of the Non-Self-Governing Territories</label>
+		</item>
+		<item id="A6825158">
+			<label>A/68/251: 58 - Implementation of the Declaration on the Granting of Independence to Colonial Countries and Peoples by the specialized agencies and the international institutions associated with the United Nations</label>
+		</item>
+		<item id="A6825159">
+			<label>A/68/251: 59 - Offers by Member States of study and training facilities for inhabitants of Non-Self-Governing Territories</label>
+		</item>
+		<item id="A6825160">
+			<label>A/68/251: 60 - Implementation of the Declaration on the Granting of Independence to Colonial Countries and Peoples</label>
+		</item>
+		<item id="A6825161">
+			<label>A/68/251: 61 - Permanent sovereignty of the Palestinian people in the Occupied Palestinian Territory, including East Jerusalem, and of the Arab population in the occupied Syrian Golan over their natural resources</label>
+		</item>
+		<item id="A6825162">
+			<label>A/68/251: 62 - Report of the United Nations High Commissioner for Refugees, questions relating to refugees, returnees and displaced persons and humanitarian questions</label>
+		</item>
+		<item id="A6825163">
+			<label>A/68/251: 63 - New Partnership for Africa's Development: progress in implementation and international support</label>
+		</item>
+		<item id="A6825163a">
+			<label>A/68/251: 63a - New Partnership for Africa's Development: progress in implementation and international support</label>
+		</item>
+		<item id="A6825163b">
+			<label>A/68/251: 63b - Causes of conflict and the promotion of durable peace and sustainable development in Africa</label>
+		</item>
+		<item id="A6825164">
+			<label>A/68/251: 64 - Report of the Human Rights Council</label>
+		</item>
+		<item id="A6825165">
+			<label>A/68/251: 65 - Promotion and protection of the rights of children</label>
+		</item>
+		<item id="A6825165a">
+			<label>A/68/251: 65a - Promotion and protection of the rights of children</label>
+		</item>
+		<item id="A6825165b">
+			<label>A/68/251: 65b - Follow-up to the outcome of the special session on children</label>
+		</item>
+		<item id="A6825166">
+			<label>A/68/251: 66 - Rights of indigenous peoples</label>
+		</item>
+		<item id="A6825166a">
+			<label>A/68/251: 66a - Rights of indigenous peoples</label>
+		</item>
+		<item id="A6825166b">
+			<label>A/68/251: 66b - Second International Decade of the World's Indigenous People</label>
+		</item>
+		<item id="A6825167">
+			<label>A/68/251: 67 - Elimination of racism, racial discrimination, xenophobia and related intolerance</label>
+		</item>
+		<item id="A6825167a">
+			<label>A/68/251: 67a - Elimination of racism, racial discrimination, xenophobia and related intolerance</label>
+		</item>
+		<item id="A6825167b">
+			<label>A/68/251: 67b - Comprehensive implementation of and follow-up to the Durban Declaration and Programme of Action</label>
+		</item>
+		<item id="A6825168">
+			<label>A/68/251: 68 - Right of peoples to self-determination</label>
+		</item>
+		<item id="A6825169">
+			<label>A/68/251: 69 - Promotion and protection of human rights</label>
+		</item>
+		<item id="A6825169a">
+			<label>A/68/251: 69a - Implementation of human rights instruments</label>
+		</item>
+		<item id="A6825169b">
+			<label>A/68/251: 69b - Human rights questions, including alternative approaches for improving the effective enjoyment of human rights and fundamental freedoms</label>
+		</item>
+		<item id="A6825169c">
+			<label>A/68/251: 69c - Human rights situations and reports of special rapporteurs and representatives</label>
+		</item>
+		<item id="A6825169d">
+			<label>A/68/251: 69d - Comprehensive implementation of and follow-up to the Vienna Declaration and Programme of Action</label>
+		</item>
+		<item id="A6825170">
+			<label>A/68/251: 70 - Strengthening of the coordination of humanitarian and disaster relief assistance of the United Nations, including special economic assistance</label>
+		</item>
+		<item id="A6825170a">
+			<label>A/68/251: 70a - Strengthening of the coordination of emergency humanitarian assistance of the United Nations</label>
+		</item>
+		<item id="A6825170b">
+			<label>A/68/251: 70b - Assistance to the Palestinian people</label>
+		</item>
+		<item id="A6825170c">
+			<label>A/68/251: 70c - Special economic assistance to individual countries or regions</label>
+		</item>
+		<item id="A6825170d">
+			<label>A/68/251: 70d - Strengthening of international cooperation and coordination of efforts to study, mitigate and minimize the consequences of the Chernobyl disaster</label>
+		</item>
+		<item id="A6825171">
+			<label>A/68/251: 71 - Assistance to survivors of the 1994 genocide in Rwanda, particularly orphans, widows and victims of sexual violence</label>
+		</item>
+		<item id="A6825172">
+			<label>A/68/251: 72 - Report of the International Court of Justice</label>
+		</item>
+		<item id="A6825173">
+			<label>A/68/251: 73 - Report of the International Criminal Tribunal for the Prosecution of Persons Responsible for Genocide and Other Serious Violations of International Humanitarian Law Committed in the Territory of Rwanda and Rwandan Citizens Responsible for Genocide and Other Such Violations Committed in the Territory of Neighbouring States between 1 January and 31 December 1994</label>
+		</item>
+		<item id="A6825174">
+			<label>A/68/251: 74 - Report of the International Tribunal for the Prosecution of Persons Responsible for Serious Violations of International Humanitarian Law Committed in the Territory of the Former Yugoslavia since 1991</label>
+		</item>
+		<item id="A6825175">
+			<label>A/68/251: 75 - Report of the International Criminal Court</label>
+		</item>
+		<item id="A6825176">
+			<label>A/68/251: 76 - Oceans and the law of the sea</label>
+		</item>
+		<item id="A6825176a">
+			<label>A/68/251: 76a - Oceans and the law of the sea</label>
+		</item>
+		<item id="A6825176b">
+			<label>A/68/251: 76b - Sustainable fisheries, including through the 1995 Agreement for the Implementation of the Provisions of the United Nations Convention on the Law of the Sea of 10 December 1982 relating to the Conservation and Management of Straddling Fish Stocks and Highly Migratory Fish Stocks, and related instruments</label>
+		</item>
+		<item id="A6825177">
+			<label>A/68/251: 77 - Responsibility of States for internationally wrongful acts</label>
+		</item>
+		<item id="A6825178">
+			<label>A/68/251: 78 - Criminal accountability of United Nations officials and experts on mission</label>
+		</item>
+		<item id="A6825179">
+			<label>A/68/251: 79 - Report of the United Nations Commission on International Trade Law on the work of its forty-sixth session</label>
+		</item>
+		<item id="A6825180">
+			<label>A/68/251: 80 - United Nations Programme of Assistance in the Teaching, Study, Dissemination and Wider Appreciation of International Law</label>
+		</item>
+		<item id="A6825181">
+			<label>A/68/251: 81 - Report of the International Law Commission on the work of its sixty-third and sixty-fifth sessions</label>
+		</item>
+		<item id="A6825182">
+			<label>A/68/251: 82 - Diplomatic protection</label>
+		</item>
+		<item id="A6825183">
+			<label>A/68/251: 83 - Consideration of prevention of transboundary harm from hazardous activities and allocation of loss in the case of such harm</label>
+		</item>
+		<item id="A6825184">
+			<label>A/68/251: 84 - Report of the Special Committee on the Charter of the United Nations and on the Strengthening of the Role of the Organization</label>
+		</item>
+		<item id="A6825185">
+			<label>A/68/251: 85 - The rule of law at the national and international levels</label>
+		</item>
+		<item id="A6825186">
+			<label>A/68/251: 86 - The scope and application of the principle of universal jurisdiction</label>
+		</item>
+		<item id="A6825187">
+			<label>A/68/251: 87 - The law of transboundary aquifers</label>
+		</item>
+		<item id="A6825188">
+			<label>A/68/251: 88 - Report of the International Atomic Energy Agency</label>
+		</item>
+		<item id="A6825189">
+			<label>A/68/251: 89 - Reduction of military budgets</label>
+		</item>
+		<item id="A6825189a">
+			<label>A/68/251: 89a - Reduction of military budgets</label>
+		</item>
+		<item id="A6825189b">
+			<label>A/68/251: 89b - Objective information on military matters, including transparency of military expenditures</label>
+		</item>
+		<item id="A6825190">
+			<label>A/68/251: 90 - Implementation of the Declaration of the Indian Ocean as a Zone of Peace</label>
+		</item>
+		<item id="A6825191">
+			<label>A/68/251: 91 - African Nuclear-Weapon-Free Zone Treaty</label>
+		</item>
+		<item id="A6825192">
+			<label>A/68/251: 92 - Consolidation of the regime established by the Treaty for the Prohibition of Nuclear Weapons in Latin America and the Caribbean (Treaty of Tlatelolco)</label>
+		</item>
+		<item id="A6825193">
+			<label>A/68/251: 93 - Review of the implementation of the Declaration on the Strengthening of International Security</label>
+		</item>
+		<item id="A6825194">
+			<label>A/68/251: 94 - Developments in the field of information and telecommunications in the context of international security</label>
+		</item>
+		<item id="A6825195">
+			<label>A/68/251: 95 - Establishment of a nuclear-weapon-free zone in the region of the Middle East</label>
+		</item>
+		<item id="A6825196">
+			<label>A/68/251: 96 - Conclusion of effective international arrangements to assure non-nuclear-weapon States against the use or threat of use of nuclear weapons</label>
+		</item>
+		<item id="A6825197">
+			<label>A/68/251: 97 - Prevention of an arms race in outer space</label>
+		</item>
+		<item id="A6825198">
+			<label>A/68/251: 98 - Role of science and technology in the context of international security and disarmament</label>
+		</item>
+		<item id="A6825199">
+			<label>A/68/251: 99 - General and complete disarmament</label>
+		</item>
+		<item id="A6825199a">
+			<label>A/68/251: 99a - Notification of nuclear tests</label>
+		</item>
+		<item id="A6825199b">
+			<label>A/68/251: 99b - Further measures in the field of disarmament for the prevention of an arms race on the seabed and the ocean floor and in the subsoil thereof</label>
+		</item>
+		<item id="A6825199c">
+			<label>A/68/251: 99c - Transparency and confidence-building measures in outer space activities</label>
+		</item>
+		<item id="A6825199d">
+			<label>A/68/251: 99d - Follow-up to nuclear disarmament obligations agreed to at the 1995, 2000 and 2010 Review Conferences of the Parties to the Treaty on the Non-Proliferation of Nuclear Weapons</label>
+		</item>
+		<item id="A6825199e">
+			<label>A/68/251: 99e - Transparency in armaments</label>
+		</item>
+		<item id="A6825199f">
+			<label>A/68/251: 99f - National legislation on transfer of arms, military equipment and dual-use goods and technology</label>
+		</item>
+		<item id="A6825199g">
+			<label>A/68/251: 99g - Problems arising from the accumulation of conventional ammunition stockpiles in surplus</label>
+		</item>
+		<item id="A6825199h">
+			<label>A/68/251: 99h - Treaty on the South-East Asia Nuclear-Weapon-Free Zone (Bangkok Treaty)</label>
+		</item>
+		<item id="A6825199i">
+			<label>A/68/251: 99i - Prohibition of the dumping of radioactive wastes</label>
+		</item>
+		<item id="A6825199j">
+			<label>A/68/251: 99j - Implementation of the Convention on the Prohibition of the Use, Stockpiling, Production and Transfer of Anti-personnel Mines and on Their Destruction</label>
+		</item>
+		<item id="A6825199k">
+			<label>A/68/251: 99k - Follow-up to the advisory opinion of the International Court of Justice on the legality of the threat or use of nuclear weapons</label>
+		</item>
+		<item id="A6825199l">
+			<label>A/68/251: 99l - Towards a nuclear-weapon-free world: accelerating the implementation of nuclear disarmament commitments</label>
+		</item>
+		<item id="A6825199m">
+			<label>A/68/251: 99m - Observance of environmental norms in the drafting and implementation of agreements on disarmament and arms control</label>
+		</item>
+		<item id="A6825199n">
+			<label>A/68/251: 99n - Promotion of multilateralism in the area of disarmament and non proliferation</label>
+		</item>
+		<item id="A6825199o">
+			<label>A/68/251: 99o - Relationship between disarmament and development</label>
+		</item>
+		<item id="A6825199p">
+			<label>A/68/251: 99p - Assistance to States for curbing the illicit traffic in small arms and light weapons and collecting them</label>
+		</item>
+		<item id="A6825199q">
+			<label>A/68/251: 99q - Measures to prevent terrorists from acquiring weapons of mass destruction</label>
+		</item>
+		<item id="A6825199r">
+			<label>A/68/251: 99r - Reducing nuclear danger</label>
+		</item>
+		<item id="A6825199s">
+			<label>A/68/251: 99s - Decreasing the operational readiness of nuclear weapons systems</label>
+		</item>
+		<item id="A6825199t">
+			<label>A/68/251: 99t - Women, disarmament, non-proliferation and arms control</label>
+		</item>
+		<item id="A6825199u">
+			<label>A/68/251: 99u - Treaty banning the production of fissile material for nuclear weapons or other nuclear explosive devices</label>
+		</item>
+		<item id="A6825199v">
+			<label>A/68/251: 99v - Implementation of the Convention on the Prohibition of the Development, Production, Stockpiling and Use of Chemical Weapons and on Their Destruction</label>
+		</item>
+		<item id="A6825199w">
+			<label>A/68/251: 99w - Taking forward multilateral nuclear disarmament negotiations</label>
+		</item>
+		<item id="A6825199x">
+			<label>A/68/251: 99x - Regional disarmament</label>
+		</item>
+		<item id="A6825199y">
+			<label>A/68/251: 99y - The illicit trade in small arms and light weapons in all its aspects</label>
+		</item>
+		<item id="A6825199z">
+			<label>A/68/251: 99z - United action towards the total elimination of nuclear weapons</label>
+		</item>
+		<item id="A6825199aa">
+			<label>A/68/251: 99aa - Nuclear disarmament</label>
+		</item>
+		<item id="A6825199bb">
+			<label>A/68/251: 99bb - Confidence-building measures in the regional and subregional context</label>
+		</item>
+		<item id="A6825199cc">
+			<label>A/68/251: 99cc - Conventional arms control at the regional and subregional levels</label>
+		</item>
+		<item id="A6825199dd">
+			<label>A/68/251: 99dd - The Arms Trade Treaty</label>
+		</item>
+		<item id="A6825199ee">
+			<label>A/68/251: 99ee - Missiles</label>
+		</item>
+		<item id="A6825199ff">
+			<label>A/68/251: 99ff - Convening of the fourth special session of the General Assembly devoted to disarmament</label>
+		</item>
+		<item id="A68251100">
+			<label>A/68/251: 100 - Review and implementation of the Concluding Document of the Twelfth Special Session of the General Assembly</label>
+		</item>
+		<item id="A68251100a">
+			<label>A/68/251: 100a - United Nations regional centres for peace and disarmament</label>
+		</item>
+		<item id="A68251100b">
+			<label>A/68/251: 100b - Convention on the Prohibition of the Use of Nuclear Weapons</label>
+		</item>
+		<item id="A68251100c">
+			<label>A/68/251: 100c - United Nations Regional Centre for Peace and Disarmament in Asia and the Pacific</label>
+		</item>
+		<item id="A68251100d">
+			<label>A/68/251: 100d - United Nations Regional Centre for Peace, Disarmament and Development in Latin America and the Caribbean</label>
+		</item>
+		<item id="A68251100e">
+			<label>A/68/251: 100e - United Nations Regional Centre for Peace and Disarmament in Africa</label>
+		</item>
+		<item id="A68251100f">
+			<label>A/68/251: 100f - Regional confidence-building measures: activities of the United Nations Standing Advisory Committee on Security Questions in Central Africa</label>
+		</item>
+		<item id="A68251101">
+			<label>A/68/251: 101 - Review of the implementation of the recommendations and decisions adopted by the General Assembly at its tenth special session</label>
+		</item>
+		<item id="A68251101a">
+			<label>A/68/251: 101a - Report of the Conference on Disarmament</label>
+		</item>
+		<item id="A68251101b">
+			<label>A/68/251: 101b - Report of the Disarmament Commission</label>
+		</item>
+		<item id="A68251102">
+			<label>A/68/251: 102 - The risk of nuclear proliferation in the Middle East</label>
+		</item>
+		<item id="A68251103">
+			<label>A/68/251: 103 - Convention on Prohibitions or Restrictions on the Use of Certain Conventional Weapons Which May Be Deemed to Be Excessively Injurious or to Have Indiscriminate Effects</label>
+		</item>
+		<item id="A68251104">
+			<label>A/68/251: 104 - Strengthening of security and cooperation in the Mediterranean region</label>
+		</item>
+		<item id="A68251105">
+			<label>A/68/251: 105 - Comprehensive Nuclear-Test-Ban Treaty</label>
+		</item>
+		<item id="A68251106">
+			<label>A/68/251: 106 - Convention on the Prohibition of the Development, Production and Stockpiling of Bacteriological (Biological) and Toxin Weapons and on Their Destruction</label>
+		</item>
+		<item id="A68251107">
+			<label>A/68/251: 107 - Revitalizing the work of the Conference on Disarmament and taking forward multilateral disarmament negotiations</label>
+		</item>
+		<item id="A68251108">
+			<label>A/68/251: 108 - Crime prevention and criminal justice</label>
+		</item>
+		<item id="A68251109">
+			<label>A/68/251: 109 - International drug control</label>
+		</item>
+		<item id="A68251110">
+			<label>A/68/251: 110 - Measures to eliminate international terrorism</label>
+		</item>
+		<item id="A68251111">
+			<label>A/68/251: 111 - Report of the Secretary-General on the work of the Organization</label>
+		</item>
+		<item id="A68251112">
+			<label>A/68/251: 112 - Report of the Secretary-General on the Peacebuilding Fund</label>
+		</item>
+		<item id="A68251113">
+			<label>A/68/251: 113 - Notification by the Secretary-General under Article 12, paragraph 2, of the Charter of the United Nations</label>
+		</item>
+		<item id="A68251114">
+			<label>A/68/251: 114 - Elections to fill vacancies in principal organs</label>
+		</item>
+		<item id="A68251114a">
+			<label>A/68/251: 114a - Election of five non-permanent members of the Security Council</label>
+		</item>
+		<item id="A68251114b">
+			<label>A/68/251: 114b - Election of eighteen members of the Economic and Social Council</label>
+		</item>
+		<item id="A68251115">
+			<label>A/68/251: 115 - Elections to fill vacancies in subsidiary organs and other elections</label>
+		</item>
+		<item id="A68251115a">
+			<label>A/68/251: 115a - Election of seven members of the Committee for Programme and Coordination</label>
+		</item>
+		<item id="A68251115b">
+			<label>A/68/251: 115b - Election of two members of the Organizational Committee of the Peacebuilding Commission</label>
+		</item>
+		<item id="A68251115c">
+			<label>A/68/251: 115c - Election of fourteen members of the Human Rights Council</label>
+		</item>
+		<item id="A68251115d">
+			<label>A/68/251: 115d - Election of the Executive Director of the United Nations Environment Programme</label>
+		</item>
+		<item id="A68251115e">
+			<label>A/68/251: 115e - Election of the Executive Director of the United Nations Human Settlements Programme</label>
+		</item>
+		<item id="A68251116">
+			<label>A/68/251: 116 - Appointments to fill vacancies in subsidiary organs and other appointments</label>
+		</item>
+		<item id="A68251116a">
+			<label>A/68/251: 116a - Appointment of members of the Advisory Committee on Administrative and Budgetary Questions</label>
+		</item>
+		<item id="A68251116b">
+			<label>A/68/251: 116b - Appointment of members of the Committee on Contributions</label>
+		</item>
+		<item id="A68251116c">
+			<label>A/68/251: 116c - Confirmation of the appointment of members of the Investments Committee</label>
+		</item>
+		<item id="A68251116d">
+			<label>A/68/251: 116d - Appointment of a member of the Board of Auditors</label>
+		</item>
+		<item id="A68251116e">
+			<label>A/68/251: 116e - Appointment of members of the International Civil Service Commission</label>
+		</item>
+		<item id="A68251116i">
+			<label>A/68/251: 116i - Appointment of members of the Commission</label>
+		</item>
+		<item id="A68251116ii">
+			<label>A/68/251: 116ii - Designation of the Vice-Chair of the Commission</label>
+		</item>
+		<item id="A68251116f">
+			<label>A/68/251: 116f - Appointment of members of the Independent Audit Advisory Committee</label>
+		</item>
+		<item id="A68251116g">
+			<label>A/68/251: 116g - Appointment of members of the Committee on Conferences</label>
+		</item>
+		<item id="A68251116h">
+			<label>A/68/251: 116h - Appointment of a member of the Joint Inspection Unit</label>
+		</item>
+		<item id="A68251116i">
+			<label>A/68/251: 116i - Approval of the appointment of the United Nations High Commissioner for Human Rights</label>
+		</item>
+		<item id="A68251117">
+			<label>A/68/251: 117 - Admission of new Members to the United Nations</label>
+		</item>
+		<item id="A68251118">
+			<label>A/68/251: 118 - Follow-up to the outcome of the Millennium Summit</label>
+		</item>
+		<item id="A68251119">
+			<label>A/68/251: 119 - The United Nations Global Counter-Terrorism Strategy</label>
+		</item>
+		<item id="A68251120">
+			<label>A/68/251: 120 - Follow-up to the commemoration of the two-hundredth anniversary of the abolition of the transatlantic slave trade</label>
+		</item>
+		<item id="A68251121">
+			<label>A/68/251: 121 - Implementation of the resolutions of the United Nations</label>
+		</item>
+		<item id="A68251122">
+			<label>A/68/251: 122 - Revitalization of the work of the General Assembly</label>
+		</item>
+		<item id="A68251123">
+			<label>A/68/251: 123 - Question of equitable representation on and increase in the membership of the Security Council and related matters</label>
+		</item>
+		<item id="A68251124">
+			<label>A/68/251: 124 - Strengthening of the United Nations system</label>
+		</item>
+		<item id="A68251125">
+			<label>A/68/251: 125 - United Nations reform: measures and proposals</label>
+		</item>
+		<item id="A68251126">
+			<label>A/68/251: 126 - Interaction between the United Nations, national parliaments and the Inter Parliamentary Union</label>
+		</item>
+		<item id="A68251127">
+			<label>A/68/251: 127 - Global health and foreign policy</label>
+		</item>
+		<item id="A68251128">
+			<label>A/68/251: 128 - International Criminal Tribunal for the Prosecution of Persons Responsible for Genocide and Other Serious Violations of International Humanitarian Law Committed in the Territory of Rwanda and Rwandan Citizens Responsible for Genocide and Other Such Violations Committed in the Territory of Neighbouring States between 1 January and 31 December 1994</label>
+		</item>
+		<item id="A68251129">
+			<label>A/68/251: 129 - International Tribunal for the Prosecution of Persons Responsible for Serious Violations of International Humanitarian Law Committed in the Territory of the Former Yugoslavia since 1991</label>
+		</item>
+		<item id="A68251130">
+			<label>A/68/251: 130 - International Residual Mechanism for Criminal Tribunals</label>
+		</item>
+		<item id="A68251131">
+			<label>A/68/251: 131 - Financial reports and audited financial statements, and reports of the Board of Auditors</label>
+		</item>
+		<item id="A68251131a">
+			<label>A/68/251: 131a - United Nations peacekeeping operations</label>
+		</item>
+		<item id="A68251131b">
+			<label>A/68/251: 131b - Capital master plan</label>
+		</item>
+		<item id="A68251131c">
+			<label>A/68/251: 131c - United Nations Development Programme</label>
+		</item>
+		<item id="A68251131d">
+			<label>A/68/251: 131d - United Nations Capital Development Fund</label>
+		</item>
+		<item id="A68251131e">
+			<label>A/68/251: 131e - United Nations Children's Fund</label>
+		</item>
+		<item id="A68251131f">
+			<label>A/68/251: 131f - United Nations Relief and Works Agency for Palestine Refugees in the Near East</label>
+		</item>
+		<item id="A68251131g">
+			<label>A/68/251: 131g - Voluntary funds administered by the United Nations High Commissioner for Refugees</label>
+		</item>
+		<item id="A68251131h">
+			<label>A/68/251: 131h - United Nations Population Fund</label>
+		</item>
+		<item id="A68251131i">
+			<label>A/68/251: 131i - United Nations Office for Project Services</label>
+		</item>
+		<item id="A68251131j">
+			<label>A/68/251: 131j - United Nations Entity for Gender Equality and the Empowerment of Women (UN-Women)</label>
+		</item>
+		<item id="A68251132">
+			<label>A/68/251: 132 - Review of the efficiency of the administrative and financial functioning of the United Nations</label>
+		</item>
+		<item id="A68251133">
+			<label>A/68/251: 133 - Programme budget for the biennium 2012-2013</label>
+		</item>
+		<item id="A68251134">
+			<label>A/68/251: 134 - Proposed programme budget for the biennium 2014-2015</label>
+		</item>
+		<item id="A68251135">
+			<label>A/68/251: 135 - Programme planning</label>
+		</item>
+		<item id="A68251136">
+			<label>A/68/251: 136 - Improving the financial situation of the United Nations</label>
+		</item>
+		<item id="A68251137">
+			<label>A/68/251: 137 - Pattern of conferences</label>
+		</item>
+		<item id="A68251138">
+			<label>A/68/251: 138 - Scale of assessments for the apportionment of the expenses of the United Nations</label>
+		</item>
+		<item id="A68251139">
+			<label>A/68/251: 139 - Human resources management</label>
+		</item>
+		<item id="A68251140">
+			<label>A/68/251: 140 - Joint Inspection Unit</label>
+		</item>
+		<item id="A68251141">
+			<label>A/68/251: 141 - United Nations common system</label>
+		</item>
+		<item id="A68251142">
+			<label>A/68/251: 142 - Report on the activities of the Office of Internal Oversight Services</label>
+		</item>
+		<item id="A68251143">
+			<label>A/68/251: 143 - Administration of justice at the United Nations</label>
+		</item>
+		<item id="A68251144">
+			<label>A/68/251: 144 - Financing of the International Criminal Tribunal for the Prosecution of Persons Responsible for Genocide and Other Serious Violations of International Humanitarian Law Committed in the Territory of Rwanda and Rwandan Citizens Responsible for Genocide and Other Such Violations Committed in the Territory of Neighbouring States between 1 January and 31 December 1994</label>
+		</item>
+		<item id="A68251145">
+			<label>A/68/251: 145 - Financing of the International Tribunal for the Prosecution of Persons Responsible for Serious Violations of International Humanitarian Law Committed in the Territory of the Former Yugoslavia since 1991</label>
+		</item>
+		<item id="A68251146">
+			<label>A/68/251: 146 - Financing of the International Residual Mechanism for Criminal Tribunals</label>
+		</item>
+		<item id="A68251147">
+			<label>A/68/251: 147 - Administrative and budgetary aspects of the financing of the United Nations peacekeeping operations</label>
+		</item>
+		<item id="A68251148">
+			<label>A/68/251: 148 - Financing of the United Nations Interim Security Force for Abyei</label>
+		</item>
+		<item id="A68251149">
+			<label>A/68/251: 149 - Financing of the United Nations Mission in the Central African Republic and Chad</label>
+		</item>
+		<item id="A68251150">
+			<label>A/68/251: 150 - Financing of the United Nations Operation in C&ograve;te d'Ivoire</label>
+		</item>
+		<item id="A68251151">
+			<label>A/68/251: 151 - Financing of the United Nations Peacekeeping Force in Cyprus</label>
+		</item>
+		<item id="A68251152">
+			<label>A/68/251: 152 - Financing of the United Nations Organization Stabilization Mission in the Democratic Republic of the Congo</label>
+		</item>
+		<item id="A68251153">
+			<label>A/68/251: 153 - Financing of the United Nations Mission in East Timor</label>
+		</item>
+		<item id="A68251154">
+			<label>A/68/251: 154 - Financing of the United Nations Integrated Mission in Timor-Leste</label>
+		</item>
+		<item id="A68251155">
+			<label>A/68/251: 155 - Financing of the United Nations Stabilization Mission in Haiti</label>
+		</item>
+		<item id="A68251156">
+			<label>A/68/251: 156 - Financing of the United Nations Interim Administration Mission in Kosovo</label>
+		</item>
+		<item id="A68251157">
+			<label>A/68/251: 157 - Financing of the United Nations Mission in Liberia</label>
+		</item>
+		<item id="A68251158">
+			<label>A/68/251: 158 - Financing of the United Nations Multidimensional Integrated Stabilization Mission in Mali</label>
+		</item>
+		<item id="A68251159">
+			<label>A/68/251: 159 - Financing of the United Nations peacekeeping forces in the Middle East</label>
+		</item>
+		<item id="A68251159a">
+			<label>A/68/251: 159a - United Nations Disengagement Observer Force</label>
+		</item>
+		<item id="A68251159b">
+			<label>A/68/251: 159b - United Nations Interim Force in Lebanon</label>
+		</item>
+		<item id="A68251160">
+			<label>A/68/251: 160 - Financing of the United Nations Mission in South Sudan</label>
+		</item>
+		<item id="A68251161">
+			<label>A/68/251: 161 - Financing of the United Nations Mission in the Sudan</label>
+		</item>
+		<item id="A68251162">
+			<label>A/68/251: 162 - Financing of the United Nations Supervision Mission in the Syrian Arab Republic</label>
+		</item>
+		<item id="A68251163">
+			<label>A/68/251: 163 - Financing of the United Nations Mission for the Referendum in Western Sahara</label>
+		</item>
+		<item id="A68251164">
+			<label>A/68/251: 164 - Financing of the African Union-United Nations Hybrid Operation in Darfur</label>
+		</item>
+		<item id="A68251165">
+			<label>A/68/251: 165 - Financing of the activities arising from Security Council resolution 1863 (2009)</label>
+		</item>
+		<item id="A68251166">
+			<label>A/68/251: 166 - Report of the Committee on Relations with the Host Country</label>
+		</item>
+		<item id="A68251167">
+			<label>A/68/251: 167 - Observer status for the Cooperation Council of Turkic-speaking States in the General Assembly</label>
+		</item>
+		<item id="A68251168">
+			<label>A/68/251: 168 - Observer status for the International Conference of Asian Political Parties in the General Assembly</label>
+		</item>
+		<item id="A68251169">
+			<label>A/68/251: 169 - Observer status for the International Chamber of Commerce in the General Assembly</label>
+		</item>
+		<item id="A68251170">
+			<label>A/68/251: 170 - Observer status for the International Institute for the Unification of Private Law in the General Assembly</label>
+		</item>
+		<item id="A68251171">
+			<label>A/68/251: 171 - Observer status for the International Anti-Corruption Academy in the General Assembly</label>
+		</item>
+		<item id="A68251172">
+			<label>A/68/251: 172 - Observer status for the Pan African Intergovernmental Agency for Water and Sanitation for Africa in the General Assembly</label>
+		</item>
+		<item id="A68251173">
+			<label>A/68/251: 173 - Observer status for the Global Green Growth Institute in the General Assembly</label>
+		</item>
+	</agenda>
+	<agenda id="E20132">
+		<item id="E201321">
+			<label>E/2013/2: 1 - Election of the Bureau</label>
+		</item>
+		<item id="E201322">
+			<label>E/2013/2: 2 - Adoption of the agenda and other organizational matters</label>
+		</item>
+		<item id="E201323">
+			<label>E/2013/2: 3 - Basic programme of work of the Council</label>
+		</item>
+		<item id="E201324">
+			<label>E/2013/2: 4 - Elections, nominations, confirmations and appointments</label>
+		</item>
+	</agenda>
+	<agenda id="E2013100">
+		<item id="E20131001">
+			<label>E/2013/100: 1 - Adoption of the agenda and other organizational matters</label>
+		</item>
+		<item id="E20131002">
+			<label>E/2013/100: 2 - High-level segment</label>
+		</item>
+		<item id="E20131002a">
+			<label>E/2013/100: 2a - High-level policy dialogue with international financial and trade institutions</label>
+		</item>
+		<item id="E20131002b">
+			<label>E/2013/100: 2b - Annual ministerial review; Theme: "Science, technology and innovation, and the potential of culture, for promoting sustainable development and achieving the Millennium Development Goals"</label>
+		</item>
+		<item id="E20131002c">
+			<label>E/2013/100: 2c - Thematic discussion. Theme: "The contribution of the Economic and Social Council to the elaboration of the post-2015 development agenda as a principal body for policy review, policy dialogue and recommendations on issues of economic and social development and for the follow-up to the Millennium Development Goals" </label>
+		</item>
+		<item id="E20131003">
+			<label>E/2013/100: 3 - Operational activities of the United Nations for international development cooperation</label>
+		</item>
+		<item id="E20131003a">
+			<label>E/2013/100: 3a - Follow-up to policy recommendations of the General Assembly and the Council</label>
+		</item>
+		<item id="E20131003b">
+			<label>E/2013/100: 3b - Reports of the Executive Boards of the United Nations Development Programme/United Nations Population Fund/United Nations Office for Project Services, the United Nations Children's Fund, the United Nations Entity for Gender Equality and the Empowerment of Women, and the World Food Programme</label>
+		</item>
+		<item id="E20131003c">
+			<label>E/2013/100: 3c - South-South cooperation for development</label>
+		</item>
+		<item id="E20131004">
+			<label>E/2013/100: 4 - The role of the United Nations system in implementing the ministerial declaration of the high-level segment of the 2012 substantive session of the Economic and Social Council</label>
+		</item>
+		<item id="E20131006">
+			<label>E/2013/100: 6 - Implementation of and follow-up to major United Nations conferences and summits</label>
+		</item>
+		<item id="E20131006a">
+			<label>E/2013/100: 6a - Follow-up to the International Conference on Financing for Development</label>
+		</item>
+		<item id="E201310010">
+			<label>E/2013/100: 10 - Regional cooperation: Dialogue with the executive secretaries of the regional commissions on the theme "Regional perspectives on the post-2015 development agenda"</label>
+		</item>
+		<item id="E20131005">
+			<label>E/2013/100: 5 - Special economic, humanitarian and disaster relief assistance</label>
+		</item>
+		<item id="E20131006">
+			<label>E/2013/100: 6 - Implementation of and follow-up to major United Nations conferences and summits</label>
+		</item>
+		<item id="E20131006b">
+			<label>E/2013/100: 6b - Review and coordination of the implementation of the Istanbul Programme of Action for the Least Developed Countries for the Decade 2011-2020</label>
+		</item>
+		<item id="E20131007">
+			<label>E/2013/100: 7 - Coordination, programme and other questions</label>
+		</item>
+		<item id="E20131007a">
+			<label>E/2013/100: 7a - Reports of coordination bodies</label>
+		</item>
+		<item id="E20131007b">
+			<label>E/2013/100: 7b - Proposed programme budget for the biennium 2014-2015</label>
+		</item>
+		<item id="E20131007c">
+			<label>E/2013/100: 7c - Mainstreaming a gender perspective into all policies and programmes in the United Nations system</label>
+		</item>
+		<item id="E20131007d">
+			<label>E/2013/100: 7d - Long-term programme of support for Haiti</label>
+		</item>
+		<item id="E20131007e">
+			<label>E/2013/100: 7e - Joint United Nations Programme on HIV/AIDS (UNAIDS)</label>
+		</item>
+		<item id="E20131007f">
+			<label>E/2013/100: 7f - African countries emerging from conflict</label>
+		</item>
+		<item id="E20131007g">
+			<label>E/2013/100: 7g - Tobacco or health</label>
+		</item>
+		<item id="E20131007h">
+			<label>E/2013/100: 7h - Calendar of conferences and meetings in the economic, social and related fields</label>
+		</item>
+		<item id="E20131008">
+			<label>E/2013/100: 8 - Implementation of General Assembly resolutions 50/227, 52/12 B, 57/270 B and 60/265</label>
+		</item>
+		<item id="E20131009">
+			<label>E/2013/100: 9 - Implementation of the Declaration on the Granting of Independence to Colonial Countries and Peoples by the specialized agencies and the international institutions associated with the United Nations</label>
+		</item>
+		<item id="E201310010">
+			<label>E/2013/100: 10 - Regional cooperation</label>
+		</item>
+		<item id="E201310011">
+			<label>E/2013/100: 11 - Economic and social repercussions of the Israeli occupation on the living conditions of the Palestinian people in the Occupied Palestinian Territory, including East Jerusalem, and the Arab population in the occupied Syrian Golan</label>
+		</item>
+		<item id="E201310012">
+			<label>E/2013/100: 12 - Non-governmental organizations</label>
+		</item>
+		<item id="E201310013">
+			<label>E/2013/100: 13 - Economic and environmental questions</label>
+		</item>
+		<item id="E201310013a">
+			<label>E/2013/100: 13a - Sustainable development</label>
+		</item>
+		<item id="E201310013b">
+			<label>E/2013/100: 13b - Science and technology for development</label>
+		</item>
+		<item id="E201310013c">
+			<label>E/2013/100: 13c - Statistics</label>
+		</item>
+		<item id="E201310013d">
+			<label>E/2013/100: 13d - Human settlements</label>
+		</item>
+		<item id="E201310013e">
+			<label>E/2013/100: 13e - Environment</label>
+		</item>
+		<item id="E201310013f">
+			<label>E/2013/100: 13f - Population and development</label>
+		</item>
+		<item id="E201310013g">
+			<label>E/2013/100: 13g - Public administration and development</label>
+		</item>
+		<item id="E201310013h">
+			<label>E/2013/100: 13h - International cooperation in tax matters</label>
+		</item>
+		<item id="E201310013i">
+			<label>E/2013/100: 13i - United Nations Forum on Forests</label>
+		</item>
+		<item id="E201310013j">
+			<label>E/2013/100: 13j - Assistance to third States affected by the application of sanctions</label>
+		</item>
+		<item id="E201310013k">
+			<label>E/2013/100: 13k - Cartography</label>
+		</item>
+		<item id="E201310013l">
+			<label>E/2013/100: 13l - Women and development</label>
+		</item>
+		<item id="E201310013m">
+			<label>E/2013/100: 13m - Transport of dangerous goods</label>
+		</item>
+		<item id="E201310014">
+			<label>E/2013/100: 14 - Social and human rights questions</label>
+		</item>
+		<item id="E201310014a">
+			<label>E/2013/100: 14a - Advancement of women</label>
+		</item>
+		<item id="E201310014b">
+			<label>E/2013/100: 14b - Social development</label>
+		</item>
+		<item id="E201310014c">
+			<label>E/2013/100: 14c - Crime prevention and criminal justice</label>
+		</item>
+		<item id="E201310014d">
+			<label>E/2013/100: 14d - Narcotic drugs</label>
+		</item>
+		<item id="E201310014e">
+			<label>E/2013/100: 14e - United Nations High Commissioner for Refugees</label>
+		</item>
+		<item id="E201310014f">
+			<label>E/2013/100: 14f - Comprehensive implementation of the Durban Declaration and Programme of Action</label>
+		</item>
+		<item id="E201310014g">
+			<label>E/2013/100: 14g - Human rights</label>
+		</item>
+		<item id="E201310014h">
+			<label>E/2013/100: 14h - Permanent Forum on Indigenous Issues</label>
+		</item>
+		<item id="E201310015">
+			<label>E/2013/100: 15 - United Nations research and training institutes</label>
+		</item>
+	</agenda>
+</agendas>
