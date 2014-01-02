@@ -65,7 +65,8 @@ def s3_list_files_in_folder(s3,bucket,prefix,pattern)
   return files
 end
 
-def parse_csv(fname)
+def parse_csv(s3, s3_bucket, fname)
+    items_array = Array.new
     metadata = SmarterCSV.process(fname, { :col_sep => "\t", :file_encoding => 'utf-8', :verbose => true })
     metadata.each do |row|
       item_hash = Hash.new
@@ -101,6 +102,8 @@ def parse_csv(fname)
       end
       item_hash["FileStatus"] = file_status
       puts "For #{item_hash['DocumentSymbol']} (#{item_hash['Language']}), referenced file #{item_hash['Filename']} was #{file_status}."
+      items_array << item_hash
       #item = db_table.items.create( item_hash )
     end
+  return items_array
 end

@@ -160,14 +160,19 @@ if opts[:specific_file]
   if File.exists?(opts[:specific_file])
     #Exists locally
     puts "Found #{opts[:specific_file]} to process."
+    fname = opts[:specific_file]
   elsif File.exists?("tmp/#{opts[:specific_file]}")
     #Exists locally
     puts "Found tmp/#{opts[:specific_file]} to process."
+    fname = "tmp/#{opts[:specific_file]}"
   elsif s3.buckets[s3_bucket].objects["#{opts[:s3_root_prefix]}/#{opts[:specific_file]}"].exists?
     puts "Found S3:/#{opts[:s3_root_prefix]}/#{opts[:specific_file]} to process."
+    fname = "tmp/#{opts[:specific_file]}"
   elsif s3.buckets[s3_bucket].objects["Drop/processed/#{opts[:specific_file]}"].exists?
     puts "Found S3:/Drop/processed/#{opts[:specific_file]} to process."
+    fname = "tmp/#{opts[:specific_file]}"
   end
+  
 end
 if opts[:latest_file]
   #Do process the latest CSV in S3
@@ -181,9 +186,11 @@ if opts[:latest_file]
       end
     end
     if File.size(fname) > 110 
-      item_hash = parse_csv(fname)
-      if item_hash
-        item = db_table.items.create( item_hash )
+      items_array = parse_csv(s3,s3_bucket,fname)
+      if items_array
+        items_array.each do |item_hash|
+          item = db_table.items.create( item_hash )
+        end
       else
         Trollop::die "<file> could not be parsed."
       end
