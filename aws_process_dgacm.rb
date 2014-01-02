@@ -68,9 +68,7 @@ Typical usage scenarios look like this (full usage notes are below):
       --s3-root-prefix <prefix> --s3-package-prefix <prefix>
       --dynamo-table <table> --reprocess
 
-4.  Parse undescribed PDFs in S3 and try to do something with them.  Note: do 
-    this only after you've processed all of the metadata spreadsheets in S3, 
-    otherwise you'll end up with packages that are split up.
+4.  Parse undescribed PDFs in S3 and try to do something with them.
 
     aws_process_dgacm --aws-credentials <file> --s3-bucket <bucket>
       --s3-root-prefix <prefix> --s3-package-prefix <prefix>
@@ -92,8 +90,9 @@ EOS
   opt :aws_credentials, "Path to a JSON-formatted credentials file that can read and write to both S3 and DynamoDB.  Required.", :type => String
   opt :s3_bucket, "Name of the S3 Bucket you wish to use.  Required.", :type => String
   opt :s3_root_prefix, "Path of the folder you wish to scan.", :type => String
-  opt :s3_package_prefix
+  opt :s3_package_prefix, "Name of the S3 subfolder you want packages to reside in.", :type => String
   opt :dynamo_table, "Name of the DynamoDB table you wish to use.  Required.", :type => String
+  opt :make_packages, "Whether or not to make packages from existing metadata and files."
   opt :reprocess, "Whether or not to reprocess incomplete packages detected by the script."
   opt :latest_file, "Process the latest CSV metadata file in S3."
   opt :specific_file, "Name of a specific file to process.  Checks locally first before searching S3.", :type => String
@@ -101,7 +100,21 @@ EOS
   opt :generate_report, "Whether to generate a report showing which packages are complete and which incomplete."
   opt :report_start, "YYYY-MM-DD formatted date to start reporting.  Default is month to date.", :type => String
   opt :report_end, "YYYY-MM-DD formatted date to end reporting.  Default is today.", :type => String
+  conflicts :latest_file, :make_packages
+  conflicts :latest_file, :reprocess
   conflicts :latest_file, :specific_file
+  conflicts :latest_file, :parse_pdfs
+  conflicts :latest_file, :generate_report
+  conflicts :specific_file, :make_packages
+  conflicts :specific_file, :reprocess
+  conflicts :specific_file, :parse_pdfs
+  conflicts :specific_file, :generate_report
+  conflicts :reprocess, :make_packages
+  conflicts :reprocess, :parse_pdfs
+  conflicts :reprocess, :generate_report
+  conflicts :parse_pdfs, :make_packages
+  conflicts :parse_pdfs, :generate_report
+  conflicts :generate_report, :make_packages
 end
 Trollop::die :aws_credentials, "<file> must be supplied" unless opts[:aws_credentials]
 Trollop::die :aws_credentials, "<file> must exist.  Check your path and try again" unless File.exists?(opts[:aws_credentials])
@@ -109,6 +122,7 @@ Trollop::die :s3_bucket, "<bucket> is a required argument" unless opts[:s3_bucke
 Trollop::die :dynamo_table, "<table> is a required argument" unless opts[:dynamo_table]
 Trollop::die :report_start, "<date> must be in the format YYYY-MM-DD, e.g., 2013-11-01" unless opts[:report_start] =~ /(\d+)-(\d+)-(\d+)/ if opts[:report_start]
 Trollop::die :report_end, "<date> must be in the format YYYY-MM-DD, e.g., 2013-11-30" unless opts[:report_end] =~ /(\d+)-(\d+)-(\d+)/ if opts[:report_end]
+Trollop::die :s3_package_prefix, "<prefix> must be supplied if choosing the --make-packages command" unless opts[:s3_package_prefix] if opts[:make_packages]
 
 
 #First let's create a temp folder
@@ -133,6 +147,9 @@ s3_root = opts[:s3_root_prefix]
 #Next let's process the options
 if opts[:reprocess]
   #Do reprocess
+  db_table.items.each do |item|
+    puts item.hash_value
+  end
 end
 
 if opts[:specific_file]
@@ -163,11 +180,13 @@ if opts[:latest_file]
         file.write(chunk)
       end
     end
-    item_hash = parse_csv(fname)
-    if item_hash
-      item = db_table.items.create( item_hash )
-    else
-      Trollop::die :specific_file, "<file> could not be parsed."
+    if File.size(fname) > 110 
+      item_hash = parse_csv(fname)
+      if item_hash
+        item = db_table.items.create( item_hash )
+      else
+        Trollop::die "<file> could not be parsed."
+      end
     end
     old_key = metadata_file.key
     new_key = old_key.gsub(/Drop\//,'Drop/processed/')
