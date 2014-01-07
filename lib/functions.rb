@@ -13,17 +13,17 @@ end
 
 def lxcode(language)
         case language
-                when "Arabic"
+                when "Arabic" || "A"
                         iso = "AR"
-                when "Chinese"
+                when "Chinese" || "C"
                         iso = "ZH"
-                when "English"
+                when "English" || "E"
                         iso = "EN"
-                when "French"
+                when "French" || "F"
                         iso = "FR"
-                when "Russian"
+                when "Russian" || "R"
                         iso = "RU"
-                when "Spanish"
+                when "Spanish" || "S"
                         iso = "ES"
         end
         return iso
@@ -54,7 +54,7 @@ def s3_latest_csv(s3,bucket,prefix,pattern)
 end
 
 def s3_list_files_in_folder(s3,bucket,prefix,pattern)
-  puts "\t#{s3}, #{bucket}, #{prefix}, #{pattern}"
+  #puts "\t#{s3}, #{bucket}, #{prefix}, #{pattern}"
   files = Array.new
   s3.buckets[bucket].objects.with_prefix(prefix).each do |obj|
     if obj.key.downcase =~ /^#{prefix.downcase}\/#{pattern}/
@@ -63,6 +63,11 @@ def s3_list_files_in_folder(s3,bucket,prefix,pattern)
     end
   end
   return files
+end
+
+def s3_move_file(s3, s3_bucket, old_key, new_key)
+  old = s3.buckets[s3_bucket].objects[old_key]
+  new = old.move_to(new_key)
 end
 
 def parse_csv(s3, s3_bucket, fname)

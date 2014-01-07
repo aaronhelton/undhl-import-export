@@ -11,7 +11,7 @@ require 'pdf-reader'
 require 'rexml/document'
 
 require_relative 'lib/functions.rb'
-
+require_relative 'lib/constants.rb'
 
 ##### Begin Argument Parsing and Procedural Logic #####
 opts = Trollop::options do
@@ -131,12 +131,14 @@ if !File.exists?('tmp')
 end
 
 AWSCREDS = JSON.parse(File.read(opts[:aws_credentials]))
+AWS.config( access_key_id: AWSCREDS["accessKeyId"], secret_access_key: AWSCREDS["secretAccessKey"] )
 ddb = AWS::DynamoDB.new(
   :access_key_id => AWSCREDS["accessKeyId"],
   :secret_access_key => AWSCREDS["secretAccessKey"]
 )
 db_table = ddb.tables[opts[:dynamo_table]]
 db_table.hash_key = ["JobNumber", :string]
+db_client = AWS::DynamoDB::Client.new(:api_version => '2012-08-10')
 s3 = AWS::S3.new(
   :access_key_id => AWSCREDS["accessKeyId"],
   :secret_access_key => AWSCREDS["secretAccessKey"]
@@ -151,7 +153,6 @@ if opts[:reprocess]
     puts item.hash_value
   end
 end
-
 if opts[:specific_file]
   #Check if file exists locally
   #If not, check in each prefix node on S3
@@ -168,11 +169,10 @@ if opts[:specific_file]
   elsif s3.buckets[s3_bucket].objects["#{opts[:s3_root_prefix]}/#{opts[:specific_file]}"].exists?
     puts "Found S3:/#{opts[:s3_root_prefix]}/#{opts[:specific_file]} to process."
     fname = "tmp/#{opts[:specific_file]}"
-  elsif s3.buckets[s3_bucket].objects["Drop/processed/#{opts[:specific_file]}"].exists?
-    puts "Found S3:/Drop/processed/#{opts[:specific_file]} to process."
+  elsif s3.buckets[s3_bucket].objects["#{opts[:s3_root_prefix]}/processed/#{opts[:specific_file]}"].exists?
+    puts "Found S3:/#{opts[:s3_root_prefix]}/processed/#{opts[:specific_file]} to process."
     fname = "tmp/#{opts[:specific_file]}"
   end
-  
 end
 if opts[:latest_file]
   #Do process the latest CSV in S3
@@ -203,11 +203,12 @@ if opts[:latest_file]
     puts "No new metadata files found to process."
   end
 end
-
 if opts[:parse_pdfs]
   #Do parse PDFs at prefix root
+  $stdout.sync = true
   #Need a temp file
   puts "Searching for undescribed PDFs"
+  print "["
   files = s3_list_files_in_folder(s3,s3_bucket,s3_root,'n\d{7}.pdf')
   files.each do |file|
     item_hash = Hash.new
@@ -224,22 +225,25 @@ if opts[:parse_pdfs]
     jobnumber = "NY-J-#{bare_fn[1..2]}-#{bare_fn[3..7]}-"
     jobnumber1 = "NY-J-#{bare_fn[1..2]}-#{bare_fn[3..7]}-*"
     if db_table.items[jobnumber].exists?
-      puts "Found a match! #{jobnumber} is already in the database."
+      #puts "Found a match! #{jobnumber} is already in the database."
+      print "."
       File.delete(fname)
       next
     elsif db_table.items[jobnumber1].exists?
-      puts "Found a match! #{jobnumber1} is already in the database."
+      #puts "Found a match! #{jobnumber1} is already in the database."
+      print "."
       File.delete(fname)
       next
     else
-      puts "Neither #{jobnumber} nor #{jobnumber1} were found in the database."
+      #puts "Neither #{jobnumber} nor #{jobnumber1} were found in the database."
       item_hash['JobNumber'] = jobnumber
       if info[:Symbol1]
         docsymbol = info[:Symbol1]
-        puts "\tWill add it with docsymbol #{docsymbol}"
+        #puts "\tWill add it with docsymbol #{docsymbol}"
         item_hash['DocumentSymbol'] = docsymbol
       else
-        puts "\tAdditionally, unable to determine the document symbol for this file."
+        #puts "\tAdditionally, unable to determine the document symbol for this file."
+        print "(!#{bare_fn})"
       end
     end
     if info[:CreationDate]
@@ -265,11 +269,12 @@ if opts[:parse_pdfs]
     item_hash["FileStatus"] = "Found"
     #We're done with it.  Probably.
     File.delete(fname)
-    puts item_hash
+    #puts item_hash
+    print "(+#{bare_fn})"
     item = db_table.items.create( item_hash )
   end
+  print "]"
 end
-
 if opts[:generate_report]
   if opts[:report_start]
     #Format is validated in the options parsing above
@@ -284,4 +289,156 @@ if opts[:generate_report]
     report_end = Time.now.localtime.strftime("%Y-%m-%d")
   end
   #Do generate report
+end
+if opts[:make_packages]
+  $stdout.sync = true
+  complete_list = Array.new
+  #Step 1: Read the values in S3:/:s3_root_prefix/:s3_package_prefix/complete.list to get the docsymbols to exclude
+  if s3.buckets[s3_bucket].objects["#{opts[:s3_root_prefix]}/#{opts[:s3_package_prefix]}/complete.list"].exists?
+    puts "Reading S3://#{opts[:s3_root_prefix]}/#{opts[:s3_package_prefix]}/complete.list..."
+    file = s3.buckets[s3_bucket].objects["#{opts[:s3_root_prefix]}/#{opts[:s3_package_prefix]}/complete.list"]
+    complete_list = s3.buckets[s3_bucket].objects[file.key].read.to_a
+  else
+    puts "No database file to parse, will create one after this run."
+  end
+  #Step 2: Get a unique list of DocumentSymbols from the db_table, but only if they aren't already in complete.list
+  puts "Finding unprocessed complete packages."
+  syms = Array.new
+  print "["
+  db_table.items.select('DocumentSymbol').each do |i|
+    unless syms.include?(i.attributes['DocumentSymbol'])
+      unless complete_list.include?(i.attributes['DocumentSymbol'])
+        print "|+#{i.attributes['DocumentSymbol']}|"
+        syms << i.attributes['DocumentSymbol']
+      else
+        print "."
+      end
+    end
+  end
+  puts "]"
+  #Step 3: Attempt to classify remaining symbols in terms of completeness.  Those missing files are certainly not complete, 
+  #but there is no guarantee that those with all files present are complete.  If we receive files later that are indicated 
+  #for already-completed packages, we should generate a replacement package.
+  syms.each do |sym|
+    if sym == nil
+      next
+    end
+    #puts sym
+    files = db_client.query( {  
+      table_name: "#{db_table.name}", 
+      index_name: "DocumentSymbol-FileStatus-index",
+      select: 'ALL_PROJECTED_ATTRIBUTES',
+      key_conditions: {
+        'DocumentSymbol' => {
+          comparison_operator: 'EQ',
+          attribute_value_list: [
+            { 's' => "#{sym}" }
+          ]
+        }
+      } 
+    } )
+    if files[:count] < 1
+      next
+    end
+    package_status = 'Complete'
+    docsymbol = nil
+    files[:member].each do |file|
+      #p file["FileStatus"][:s]
+      if file["DocumentSymbol"][:s] && file["DocumentSymbol"][:s].length > 1 
+        docsymbol = file["DocumentSymbol"][:s]
+        if !file["FileStatus"] || !file["FileStatus"][:s]
+          package_status = "Incomplete"
+        end
+        if file["FileStatus"][:s] == "Missing"
+          package_status = "Incomplete"
+        end
+      else
+        package_status = 'Incomplete'
+      end
+    end
+    if package_status == 'Complete'
+      complete_list << docsymbol.chomp
+    end
+  end 
+  if complete_list
+    # Step 4: Process entries from complete.list, arranging packages according to document symbol.  When files are moved,
+    # we will certainly need to update the record in DynamoDB
+    puts "Making packages"
+    complete_list.each do |docsymbol|
+      metadata = nil
+      out_dir = "#{opts[:s3_package_prefix]}/#{docsymbol}"
+      dublin_core_xml = "#{out_dir}/dublin_core.xml"
+      dcxml = nil
+      metadata_undr_xml = "#{out_dir}/metadata_undr.xml"
+      muxml = nil
+      contents_file = "#{out_dir}/contents"
+      contents = Array.new
+      # Refactor idea: this would be more efficient if the query were done only once; this is the second query against DynamoDB...
+      # Consider consolidation?
+      files = db_client.query( {
+        table_name: "#{db_table.name}",
+        index_name: "DocumentSymbol-FileStatus-index",
+        select: 'ALL_PROJECTED_ATTRIBUTES',
+        key_conditions: {
+          'DocumentSymbol' => {
+            comparison_operator: 'EQ',
+            attribute_value_list: [
+              { 's' => "#{docsymbol}" }
+            ]
+          }
+        }
+      } )
+      #By now we should be working only with a list of docysmbols for which all files that have been described have also been 
+      #accounted for.  The metadata for each file under a docsymbol should be identical, so there *should* be no reason to care
+      #which one we take the final metadata from. 
+      files[:member].each do |file|
+        chash = Hash.new
+        jobnum = file["JobNumber"][:s]
+        metadata = db_client.query( {
+          table_name: "#{db_table.name}",
+          select: 'ALL_ATTRIBUTES',
+          key_conditions: {
+            'JobNumber' => {
+              comparison_operator: 'EQ',
+              attribute_value_list: [
+                { 's' => "#{jobnum}" }
+              ]
+            }
+          }
+        } )
+    # Step 5: Make a dublin_core.xml file, a metadata_undr.xml file, and a contents file.
+        if file["Language"][:s]
+          language = file["Language"][:s]
+        else
+          language = "NN"
+        end
+        new_file_name = "#{docsymbol.gsub(/\//,'_').gsub(/\s+/,'_')}-#{lxcode(language)}.pdf"
+        contents << "#{new_file_name}\tbundle:ORIGINAL"
+        #Step 6: move the file on S3
+        old_file_name = file["Filename"][:s]
+
+        puts "Moving #{old_file_name} to #{new_file_name}"
+        #s3_move_file("","")
+        #Step 7: Update the db entry
+        puts "Updating DynamoDB entry with the new location."
+      end
+      dcxml = make_dublin_core_xml(metadata)
+      muxml = make_undr_xml(metadata)
+      if contents
+        puts "Writing S3://#{contents_file}"
+        #s3_write_file(contents_file, contents.join("\n"))
+      end
+      if dcxml
+        puts "Writing S3://#{dublin_core_xml}"
+        #s3_write_file(dublin_core_xml, dcxml)
+      end
+      if muxml
+        puts "Writing S3://#{metadata_undr_xml}"
+        #s3_write_file(metadata_undr_xml, muxml)
+      end
+    end
+
+    # Step 8: Write out a new complete.list file with values of processed symbols
+    s3.buckets[s3_bucket].objects['Drop/packages/complete.list'].write(complete_list.join("\n"))
+  end
 end
