@@ -366,13 +366,19 @@ if opts[:make_packages]
     puts "Making packages"
     complete_list.each do |docsymbol|
       metadata = nil
-      out_dir = "#{opts[:s3_package_prefix]}/#{docsymbol}"
+      metadata_member = nil
+      out_dir = "#{opts[:s3_root_prefix]}/#{opts[:s3_package_prefix]}/#{docsymbol.gsub(/\//,'_').gsub(/\s+/,'_')}"
       dublin_core_xml = "#{out_dir}/dublin_core.xml"
+      if s3.buckets[s3_bucket].objects[dublin_core_xml].exists?
+        puts "Resuming previous run."
+        next
+      end
       dcxml = nil
       metadata_undr_xml = "#{out_dir}/metadata_undr.xml"
       muxml = nil
       contents_file = "#{out_dir}/contents"
       contents = Array.new
+      languages = Array.new
       # Refactor idea: this would be more efficient if the query were done only once; this is the second query against DynamoDB...
       # Consider consolidation?
       files = db_client.query( {
@@ -406,35 +412,64 @@ if opts[:make_packages]
             }
           }
         } )
+        #puts metadata
     # Step 5: Make a dublin_core.xml file, a metadata_undr.xml file, and a contents file.
-        if file["Language"][:s]
-          language = file["Language"][:s]
-        else
-          language = "NN"
-        end
-        new_file_name = "#{docsymbol.gsub(/\//,'_').gsub(/\s+/,'_')}-#{lxcode(language)}.pdf"
+        metadata_member = metadata[:member].first
+        language = metadata_member["Language"][:s]
+        languages << language
+        #puts language
+        new_file_name = "#{docsymbol.gsub(/\//,'_').gsub(/\s+/,'_')}-#{language}.pdf"
+        full_new_file_name = "#{out_dir}/#{new_file_name}"
         contents << "#{new_file_name}\tbundle:ORIGINAL"
         #Step 6: move the file on S3
-        old_file_name = file["Filename"][:s]
+        old_file_name = metadata_member["Filename"][:s]
+        if old_file_name =~ /\_/
+          next
+        end
+        #this might be dangerous
+        if !s3.buckets[s3_bucket].objects[old_file_name].exists?
+          # The logic here is that the file was previously moved for some reason.
+          # I don't know if this is a good assumption, but there should have been 
+          # numerous hurdles already overcome to establish that this filename was
+          # found here at some point.
+          next
+        end
 
-        puts "Moving #{old_file_name} to #{new_file_name}"
-        #s3_move_file("","")
+        puts "Moving #{old_file_name} to #{full_new_file_name}"
+        s3_move_file(s3,s3_bucket,old_file_name,full_new_file_name)
         #Step 7: Update the db entry
         puts "Updating DynamoDB entry with the new location."
+        db_update = db_client.update_item( {
+          table_name: "#{db_table.name}",
+          key: {
+            "JobNumber" => {
+              "s" => "#{jobnum}"
+            }
+          },
+          attribute_updates: {
+            "Filename" => {
+              value: {
+                "s" => "#{full_new_file_name}"
+              },
+              action: "PUT"
+            }
+          }
+        } )
+        #Trollop::die "Stopping here..."
       end
-      dcxml = make_dublin_core_xml(metadata)
-      muxml = make_undr_xml(metadata)
+      dcxml = make_dublin_core_xml(metadata_member,languages)
+      muxml = make_undr_xml(metadata_member)
       if contents
         puts "Writing S3://#{contents_file}"
-        #s3_write_file(contents_file, contents.join("\n"))
+        s3.buckets[s3_bucket].objects.create(contents_file,contents.join("\n"))
       end
       if dcxml
         puts "Writing S3://#{dublin_core_xml}"
-        #s3_write_file(dublin_core_xml, dcxml)
+        s3.buckets[s3_bucket].objects.create(dublin_core_xml,dcxml)
       end
       if muxml
         puts "Writing S3://#{metadata_undr_xml}"
-        #s3_write_file(metadata_undr_xml, muxml)
+        s3.buckets[s3_bucket].objects.create(metadata_undr_xml,muxml)
       end
     end
 
